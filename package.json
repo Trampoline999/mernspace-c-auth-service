@@ -9,6 +9,9 @@
   "author": "onkar chougule",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.2.0",
     "prettier": "3.8.1"
   }
 }
