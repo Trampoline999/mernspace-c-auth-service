@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "user management service",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon ./src/index.js",
     "lint:check": "eslint .",
     "prepare": "husky"
   },
@@ -17,5 +18,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
   }
 }
