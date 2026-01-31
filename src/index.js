@@ -22,6 +22,7 @@ const StartServer = () => {
 };
 StartServer();
 
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   logger.error(err.message);
   const statusCode = err.statusCode || 500;
