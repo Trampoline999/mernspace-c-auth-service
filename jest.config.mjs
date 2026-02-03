@@ -34,7 +34,7 @@ const config = {
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
   testEnvironment: "node",
- // extensionsToTreatAsEsm: [".js"],
+  // extensionsToTreatAsEsm: [".js"],
   transform: {},
 
   // A list of reporter names that Jest uses when writing coverage reports
@@ -191,7 +191,7 @@ const config = {
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  // verbose: undefined,
+  verbose: true,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],
