@@ -6,7 +6,10 @@ import logger from "./config/logger.js";
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Auth-service is running...");
+  res.status(200).json({
+    message: "auth-service is running",
+  });
+  //res.send("Auth-service is running...");
 });
 
 const StartServer = () => {
@@ -38,3 +41,5 @@ app.use((err, req, res, next) => {
     ],
   });
 });
+
+export default app;

@@ -7,22 +7,26 @@
   "scripts": {
     "start": "nodemon ./src/index.js",
     "lint:check": "eslint .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "prepare": "husky"
   },
   "author": "onkar chougule",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@jest/globals": "^30.2.0",
     "eslint": "^9.39.2",
     "globals": "^17.2.0",
     "http-errors": "^2.0.1",
     "husky": "^9.1.7",
+    "jest": "^30.2.0",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "supertest": "^7.2.2",
     "winston": "^3.19.0"
   }
 }
