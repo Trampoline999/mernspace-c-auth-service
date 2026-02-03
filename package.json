@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/index.js",
+    "dev": "nodemon ./src/index.js",
     "lint:check": "eslint .",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "prepare": "husky"
@@ -21,6 +21,7 @@
     "husky": "^9.1.7",
     "jest": "^30.2.0",
     "lint-staged": "^16.2.7",
+    "nodemon": "^3.1.11",
     "prettier": "3.8.1"
   },
   "dependencies": {
