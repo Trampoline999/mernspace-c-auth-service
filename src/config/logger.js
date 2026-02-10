@@ -11,13 +11,13 @@ const logger = winston.createLogger({
       dirname: "logs",
       filename: "combined.log",
       level: "info",
-      silent: Config.NODE_ENV === "test",
+      silent: Config.NODE_ENV === "prod",
     }),
     new winston.transports.File({
       dirname: "logs",
       filename: "error.log",
       level: "error",
-      silent: Config.NODE_ENV === "test",
+      silent: Config.NODE_ENV === "prod",
     }),
     new winston.transports.Console({
       level: "info",
@@ -25,7 +25,7 @@ const logger = winston.createLogger({
         winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
         winston.format.json(),
       ),
-      silent: Config.NODE_ENV === "test",
+      silent: Config.NODE_ENV === "prod",
     }),
   ],
 });

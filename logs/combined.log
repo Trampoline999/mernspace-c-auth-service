@@ -7,3 +7,4 @@
 {"level":"info","message":"server is listening on port : 1337","serviceName":"auth-service"}
 {"level":"info","message":"server is listening on port : 1337","serviceName":"auth-service"}
 {"level":"info","message":"server is listening on port : 1337","serviceName":"auth-service"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service"}

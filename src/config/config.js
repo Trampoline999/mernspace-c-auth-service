@@ -8,10 +8,11 @@ dotenv.config({
   path: path.join(__dirname, `../../.env.${process.env.NODE_ENV}`),
 });
 
-const { DB_PORT, NODE_ENV, DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME } =
+const { PORT, DB_PORT, NODE_ENV, DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME } =
   process.env;
 
 export const Config = {
+  PORT,
   DB_PORT,
   NODE_ENV,
   DB_HOST,

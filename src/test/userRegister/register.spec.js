@@ -1,8 +1,41 @@
-import { describe, it, expect } from "@jest/globals";
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+} from "@jest/globals";
 import request from "supertest";
 import app from "../../app";
+import { AppDataSource } from "../../config/data-source.js";
+import { User } from "../../entity/User.js";
+import { truncateTable } from "../../utils/utils";
 
 describe("POST /auth/register", () => {
+  let connection;
+
+  beforeAll(async () => {
+    try {
+      connection = await AppDataSource.initialize();
+    } catch (error) {
+      console.error("Error during Data Source initialization:", error);
+      throw error; // Fail the test immediately if DB doesn't start
+    }
+  });
+
+  beforeEach(async () => {
+    if (connection && connection.isInitialized) {
+      await truncateTable(connection);
+    }
+  });
+
+  afterAll(async () => {
+    if (connection && connection.isInitialized) {
+      await connection.destroy();
+    }
+  });
+
   describe("Given all test fields", () => {
     it("should return 200 status code", async () => {
       //Arrange
@@ -40,6 +73,9 @@ describe("POST /auth/register", () => {
       //Act
       const response = await request(app).post("/auth/register").send(userData);
       //assert
+      const userRepository = await connection.getRepository(User);
+      const users = await userRepository.findOne({});
+      expect(users).toBeDefined();
     });
   });
 
