@@ -3,6 +3,9 @@ import logger from "./config/logger.js";
 import authRouter from "./routes/auth.routes.js";
 
 const app = express();
+
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "auth-service is running",

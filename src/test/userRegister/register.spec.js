@@ -43,6 +43,7 @@ describe("POST /auth/register", () => {
         firstName: "onkar",
         lastName: "chougule",
         email: "onkarchougule@gmail.com",
+        password:"onkar123"
       };
 
       //Act
@@ -74,8 +75,8 @@ describe("POST /auth/register", () => {
       const response = await request(app).post("/auth/register").send(userData);
       //assert
       const userRepository = await connection.getRepository(User);
-      const users = await userRepository.findOne({});
-      expect(users).toBeDefined();
+      const users = await userRepository.find();
+      expect(users).toHaveLength(1);
     });
   });
 

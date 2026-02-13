@@ -1,1 +1,14 @@
 
+{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
