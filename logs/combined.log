@@ -21,3 +21,5 @@
 {"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
 {"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
 {"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service"}

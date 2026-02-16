@@ -1,11 +1,14 @@
 import express from "express";
 import { AuthController } from "../controllers/AuthController.js";
-import { userService } from "../services/userService";
+import { UserService } from "../services/userService.js";
+import logger from "../config/logger.js";
 
 const authRouter = express.Router();
-const userService = new userService();
-const authController = new AuthController({ userService });
+const userService = new UserService();
+const authController = new AuthController({ userService, logger });
 
-authRouter.post("/register", (req, res) => authController.register(req, res));
+authRouter.post("/register", (req, res, next) =>
+  authController.register(req, res, next),
+);
 
 export default authRouter;

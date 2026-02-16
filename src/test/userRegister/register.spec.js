@@ -43,7 +43,7 @@ describe("POST /auth/register", () => {
         firstName: "onkar",
         lastName: "chougule",
         email: "onkarchougule@gmail.com",
-        password:"onkar123"
+        password: "secret",
       };
 
       //Act
@@ -58,6 +58,7 @@ describe("POST /auth/register", () => {
         firstName: "onkar",
         lastName: "chougule",
         email: "onkarchougule@gmail.com",
+        password: "secret",
       };
       //Act
       const response = await request(app).post("/auth/register").send(userData);
@@ -70,6 +71,7 @@ describe("POST /auth/register", () => {
         firstName: "onkar",
         lastName: "chougule",
         email: "onkarchougule@gmail.com",
+        password: "secret",
       };
       //Act
       const response = await request(app).post("/auth/register").send(userData);

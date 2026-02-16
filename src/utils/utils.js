@@ -5,5 +5,6 @@ export const truncateTable = async (connection) => {
   for (const entity of entities) {
     const repository = connection.getRepository(entity.name);
     await repository.clear();
+
   }
 }
