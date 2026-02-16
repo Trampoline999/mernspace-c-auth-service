@@ -1,6 +1,7 @@
 export class AuthController {
   userService;
-  constructor({ private: userService, private: logger }) {
+  logger;
+  constructor({ userService, logger }) {
     this.userService = userService;
     this.logger = logger;
   }
