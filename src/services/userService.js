@@ -1,17 +1,21 @@
 import createHttpError from "http-errors";
-import { AppDataSource } from "../config/data-source.js";
-import { User } from "../entity/User.js";
+import bcrypt from "bcrypt";
 import { Roles } from "../constants/index.js";
-
 export class UserService {
+  constructor(userRepository) {
+    this.userRepository = userRepository;
+  }
   async create({ firstName, lastName, email, password }) {
     try {
-      const userRepository = AppDataSource.getRepository(User);
-      const user = await userRepository.save({
+
+      const saltRounds =10;
+      const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+      const user = await this.userRepository.save({
         firstName,
         lastName,
         email,
-        password,
+        password: hashedPassword,
         role: Roles.CUSTOMER,
       });
       return user;

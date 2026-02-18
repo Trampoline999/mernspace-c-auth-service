@@ -15,3 +15,9 @@
 {"level":"error","message":"Cannot read properties of undefined (reading 'create')","serviceName":"auth-service"}
 {"level":"error","message":"Cannot read properties of undefined (reading 'create')","serviceName":"auth-service"}
 {"level":"error","message":"Cannot read properties of undefined (reading 'create')","serviceName":"auth-service"}
+{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
