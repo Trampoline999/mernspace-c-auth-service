@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1771489270768" clover="3.2.0">
-  <project timestamp="1771489270768" name="All files">
-    <metrics statements="224" coveredstatements="215" conditionals="23" coveredconditionals="21" methods="5" coveredmethods="5" elements="252" coveredelements="241" complexity="0" loc="224" ncloc="224" packages="7" files="9" classes="9"/>
+<coverage generated="1771522834172" clover="3.2.0">
+  <project timestamp="1771522834172" name="All files">
+    <metrics statements="277" coveredstatements="268" conditionals="26" coveredconditionals="24" methods="5" coveredmethods="5" elements="308" coveredelements="297" complexity="0" loc="277" ncloc="277" packages="8" files="10" classes="10"/>
     <package name="src">
       <metrics statements="33" coveredstatements="30" conditionals="3" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="app.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/app.js">
@@ -139,35 +139,41 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <metrics statements="32" coveredstatements="32" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
       <file name="AuthController.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/controllers/AuthController.js">
-        <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="2" type="stmt"/>
+        <metrics statements="32" coveredstatements="32" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
-        <line num="21" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="22" count="8" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="24" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.entity">
@@ -206,9 +212,9 @@
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="auth.routes.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/routes/auth.routes.js">
-        <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -221,11 +227,12 @@
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.services">
@@ -272,6 +279,58 @@
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="8" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.validators">
+      <metrics statements="46" coveredstatements="46" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <file name="register-validators.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/validators/register-validators.js">
+        <metrics statements="46" coveredstatements="46" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
       </file>
     </package>
   </project>

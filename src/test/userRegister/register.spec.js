@@ -14,7 +14,18 @@ import { Roles } from "../../constants/index.js";
 
 describe("POST /auth/register", () => {
   let connection;
+  let userRepository;
 
+  const userData = {
+    firstName: "onkar",
+    lastName: "chougule",
+    email: "onkarchougule@gmail.com",
+    password: "secret@123",
+  };
+
+  const registerUser = (userData) => {
+    return request(app).post("/auth/register").send(userData);
+  };
   beforeAll(async () => {
     try {
       connection = await AppDataSource.initialize();
@@ -29,6 +40,7 @@ describe("POST /auth/register", () => {
       await connection.dropDatabase();
       console.log("Database dropped successfully.");
       await connection.synchronize();
+      userRepository = connection.getRepository(User);
       // await truncateTable(connection);
     }
   });
@@ -41,128 +53,72 @@ describe("POST /auth/register", () => {
 
   describe("Given all test fields", () => {
     it("should return 200 status code", async () => {
-      //Arrange
-      const userData = {
-        firstName: "onkar",
-        lastName: "chougule",
-        email: "onkarchougule@gmail.com",
-        password: "secret",
-      };
-
-      //Act
-      const response = await request(app).post("/auth/register").send(userData);
-
-      //assert
+      const response = await registerUser(userData);
       expect(response.statusCode).toBe(201);
     });
 
     it("should return json response", async () => {
-      const userData = {
-        firstName: "onkar",
-        lastName: "chougule",
-        email: "onkarchougule@gmail.com",
-        password: "secret",
-      };
-      //Act
-      const response = await request(app).post("/auth/register").send(userData);
-      //assert
+      const response = await registerUser(userData);
       expect(response.type).toBe("application/json");
     });
 
     it("should return user from database", async () => {
-      const userData = {
-        firstName: "onkar",
-        lastName: "chougule",
-        email: "onkarchougule@gmail.com",
-        password: "secret",
-      };
-      //Act
-      await request(app).post("/auth/register").send(userData);
-      //assert
-      const userRepository = await connection.getRepository(User);
+      await registerUser(userData);
+      userRepository = await connection.getRepository(User);
       const users = await userRepository.find();
       expect(users).toHaveLength(1);
     });
   });
 
   it("should return an id of created user from database", async () => {
-    const userData = {
-      firstName: "onkar",
-      lastName: "chougule",
-      email: "onkarchougule@gmail.com",
-      password: "secret",
-    };
-    //Act
-    const response = await request(app).post("/auth/register").send(userData);
-
-    //assert
+    const response = await registerUser(userData);
     expect(response.body).toHaveProperty("id");
   });
 
   it("should assign a custormer role", async () => {
-    const userData = {
-      firstName: "onkar",
-      lastName: "chougule",
-      email: "onkarchougule@gmail.com",
-      password: "secret",
-    };
-    //Act
-    await request(app).post("/auth/register").send(userData);
-    //assert
-    const userRepository = await connection.getRepository(User);
+    await registerUser(userData);
+    userRepository = await connection.getRepository(User);
     const user = await userRepository.find();
+
     expect(user[0]).toHaveProperty("role");
     expect(user[0].role).toBe(Roles.CUSTOMER);
   });
 
   it("should store hashed password in database ", async () => {
-    const userData = {
-      firstName: "onkar",
-      lastName: "chougule",
-      email: "onkarchougule@gmail.com",
-      password: "secret",
-    };
-    //Act
-    await request(app).post("/auth/register").send(userData);
-    //assert
-    const userRepository = await connection.getRepository(User);
+    await registerUser(userData);
+    userRepository = await connection.getRepository(User);
     const users = await userRepository.find();
+
     expect(users[0].password).not.toBe(userData.password);
     expect(users[0].password).toHaveLength(60);
   });
 
   it("should return 400 if email already exists in database ", async () => {
-    const userData = {
-      firstName: "onkar",
-      lastName: "chougule",
-      email: "onkarchougule@gmail.com",
-      password: "secret",
-    };
     const userRepository = await connection.getRepository(User);
     await userRepository.save({ ...userData, role: Roles.CUSTOMER });
-    //Act
-    const response = await request(app).post("/auth/register").send(userData);
 
-    //assert
+    const response = await request(app).post("/auth/register").send(userData);
     expect(response.statusCode).toBe(400);
   });
 
   it("should have one user in database ", async () => {
-    const userData = {
-      firstName: "onkar",
-      lastName: "chougule",
-      email: "onkarchougule@gmail.com",
-      password: "secret",
-    };
-    const userRepository = await connection.getRepository(User);
+    userRepository = await connection.getRepository(User);
     await userRepository.save({ ...userData, role: Roles.CUSTOMER });
-    //Act
-    const response = await request(app).post("/auth/register").send(userData);
+    await registerUser(userData);
     const users = await userRepository.find({});
 
-    //assert
     expect(users).toHaveLength(1);
   });
 
-  describe("Fields are missing", () => {});
+  describe("Fields are missing", () => {
+    it("should return 400 if email is empty  ", async () => {
+      const response = await registerUser({ ...userData, email: "" });
+      expect(response.statusCode).toBe(400);
+    });
+
+    it("should return 400 status code if password length is less than 8 characters", async () => {
+      const response = await registerUser({ ...userData, password: "1234" });
+      expect(response.statusCode).toBe(400);
+    });
+  });
 });

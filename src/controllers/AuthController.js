@@ -1,3 +1,4 @@
+import { validationResult } from "express-validator";
 export class AuthController {
   userService;
   logger;
@@ -8,6 +9,11 @@ export class AuthController {
   async register(req, res, next) {
     try {
       const { firstName, lastName, email, password } = req.body;
+
+      const result = validationResult(req);
+      if (!result.isEmpty()) {
+        return res.status(400).json({ errors: result.array() });
+      }
 
       const user = await this.userService.create({
         firstName,

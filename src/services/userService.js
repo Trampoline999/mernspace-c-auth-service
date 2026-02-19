@@ -15,7 +15,6 @@ export class UserService {
         const err = createHttpError(400, "email already exists");
         throw err;
       }
-
       const saltRounds = 10;
       const hashedPassword = await bcrypt.hash(password, saltRounds);
 
@@ -26,6 +25,7 @@ export class UserService {
         password: hashedPassword,
         role: Roles.CUSTOMER,
       });
+      
     } catch (err) {
       if (err.status === 400) {
         throw err;
