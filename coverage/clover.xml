@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1771438055697" clover="3.2.0">
-  <project timestamp="1771438055697" name="All files">
-    <metrics statements="220" coveredstatements="191" conditionals="18" coveredconditionals="16" methods="6" coveredmethods="5" elements="244" coveredelements="212" complexity="0" loc="220" ncloc="220" packages="8" files="10" classes="10"/>
+<coverage generated="1771489270768" clover="3.2.0">
+  <project timestamp="1771489270768" name="All files">
+    <metrics statements="224" coveredstatements="215" conditionals="23" coveredconditionals="21" methods="5" coveredmethods="5" elements="252" coveredelements="241" complexity="0" loc="224" ncloc="224" packages="7" files="9" classes="9"/>
     <package name="src">
-      <metrics statements="33" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <metrics statements="33" coveredstatements="30" conditionals="3" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="app.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/app.js">
-        <metrics statements="33" coveredstatements="18" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <metrics statements="33" coveredstatements="30" conditionals="3" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -23,19 +23,19 @@
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
         <line num="31" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
@@ -139,9 +139,9 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="26" coveredstatements="23" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <file name="AuthController.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/controllers/AuthController.js">
-        <metrics statements="26" coveredstatements="23" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -150,23 +150,23 @@
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="19" count="6" type="stmt"/>
         <line num="20" count="6" type="stmt"/>
-        <line num="21" count="6" type="cond" truecount="0" falsecount="1"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="6" type="stmt"/>
+        <line num="21" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
       </file>
     </package>
@@ -229,51 +229,49 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="26" coveredstatements="23" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="40" coveredstatements="34" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <file name="userService.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/services/userService.js">
-        <metrics statements="26" coveredstatements="23" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <metrics statements="40" coveredstatements="34" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="19" count="6" type="stmt"/>
         <line num="20" count="6" type="stmt"/>
-        <line num="21" count="6" type="cond" truecount="0" falsecount="1"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
         <line num="25" count="6" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.utils">
-      <metrics statements="10" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="0"/>
-      <file name="utils.js" path="/Users/onkarchougule/Desktop/MERN_Stack/auth-service/src/utils/utils.js">
-        <metrics statements="10" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
       </file>
     </package>
   </project>

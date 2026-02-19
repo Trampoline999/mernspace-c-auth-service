@@ -7,21 +7,34 @@ export class UserService {
   }
   async create({ firstName, lastName, email, password }) {
     try {
+      const user = await this.userRepository.findOne({
+        where: { email: email },
+      });
 
-      const saltRounds =10;
+      if (user) {
+        const err = createHttpError(400, "email already exists");
+        throw err;
+      }
+
+      const saltRounds = 10;
       const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-      const user = await this.userRepository.save({
+      return await this.userRepository.save({
         firstName,
         lastName,
         email,
         password: hashedPassword,
         role: Roles.CUSTOMER,
       });
-      return user;
-    } catch (error) {
-      const err = createHttpError(500, "failed to store data in the database");
-      throw err;
+    } catch (err) {
+      if (err.status === 400) {
+        throw err;
+      }
+      const error = createHttpError(
+        500,
+        "failed to store data in the database",
+      );
+      throw error;
     }
   }
 }

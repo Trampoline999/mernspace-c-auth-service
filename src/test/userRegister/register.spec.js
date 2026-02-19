@@ -10,7 +10,6 @@ import request from "supertest";
 import app from "../../app";
 import { AppDataSource } from "../../config/data-source.js";
 import { User } from "../../entity/User.js";
-import { truncateTable } from "../../utils/utils";
 import { Roles } from "../../constants/index.js";
 
 describe("POST /auth/register", () => {
@@ -143,8 +142,26 @@ describe("POST /auth/register", () => {
     await userRepository.save({ ...userData, role: Roles.CUSTOMER });
     //Act
     const response = await request(app).post("/auth/register").send(userData);
+
     //assert
     expect(response.statusCode).toBe(400);
+  });
+
+  it("should have one user in database ", async () => {
+    const userData = {
+      firstName: "onkar",
+      lastName: "chougule",
+      email: "onkarchougule@gmail.com",
+      password: "secret",
+    };
+    const userRepository = await connection.getRepository(User);
+    await userRepository.save({ ...userData, role: Roles.CUSTOMER });
+    //Act
+    const response = await request(app).post("/auth/register").send(userData);
+    const users = await userRepository.find({});
+
+    //assert
+    expect(users).toHaveLength(1);
   });
 
   describe("Fields are missing", () => {});

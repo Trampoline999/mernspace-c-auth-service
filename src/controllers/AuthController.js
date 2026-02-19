@@ -18,8 +18,8 @@ export class AuthController {
 
       this.logger.info("user created succussfully");
       res.status(201).json({ id: user.id });
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      next(err);
       return;
     }
   }

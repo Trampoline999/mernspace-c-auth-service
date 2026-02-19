@@ -1,23 +1,7 @@
-
-{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"lastName\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"null value in column \"password\" of relation \"users\" violates not-null constraint","serviceName":"auth-service"}
-{"level":"error","message":"Cannot read properties of undefined (reading 'create')","serviceName":"auth-service"}
-{"level":"error","message":"Cannot read properties of undefined (reading 'create')","serviceName":"auth-service"}
-{"level":"error","message":"Cannot read properties of undefined (reading 'create')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'id')","serviceName":"auth-service"}
 {"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'id')","serviceName":"auth-service"}
 {"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
-{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
-{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
-{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
-{"level":"error","message":"failed to store data in the database","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
