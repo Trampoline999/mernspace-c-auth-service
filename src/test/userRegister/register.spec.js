@@ -12,6 +12,7 @@ import { AppDataSource } from "../../config/data-source.js";
 import { User } from "../../entity/User.js";
 import { Roles } from "../../constants/index.js";
 import { isJwt } from "../../utils/utils.js";
+import { RefreshToken } from "../../entity/RefreshToken.js";
 
 describe("POST /auth/register", () => {
   let connection;
@@ -134,6 +135,19 @@ describe("POST /auth/register", () => {
 
     expect(isJwt(accessToken)).toBeTruthy();
     expect(isJwt(refreshToken)).toBeTruthy();
+  });
+
+  it("should save refresh token in database", async () => {
+    let refreshToken = null;
+    const response = await registerUser(userData);
+
+    const cookies = response.headers["set-cookie"];
+    console.log(cookies);
+
+    const refreshTokenRepository = await connection.getRepository(RefreshToken);
+    refreshToken = await refreshTokenRepository.find({});
+
+    expect(refreshToken.length).toHaveLength(1);
   });
 
   describe("Fields are missing", () => {

@@ -10,3 +10,9 @@ temp/
 .env.test
 .env.dev
 .env.prod
+.env
+
+#certs
+certs/
+certs/private.pem
+certs/public.pem
