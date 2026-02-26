@@ -32,20 +32,23 @@ export class TokenService {
     return accessToken;
   }
 
-  async generateRefreshToken(payload, user) {
+  async generateRefreshToken(payload) {
+    const refreshToken = jwt.sign(payload, Config.PRIVATE_KEY_SECRET, {
+      algorithm: "HS256",
+      expiresIn: "7d",
+      issuer: "auth-service",
+      jwtid: String(payload.id),
+    });
+
+    return refreshToken;
+  }
+
+  async persistRefreshToken(user) {
     const newRefreshToken = await this.refreshTokenRepository.save({
       user: user,
       updatedAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
     });
 
-    // : persist refresh tokens to database and implement rotation/revocation
-    const refreshToken = jwt.sign(payload, Config.PRIVATE_KEY_SECRET, {
-      algorithm: "HS256",
-      expiresIn: "7d",
-      issuer: "auth-service",
-      jwtid: String(newRefreshToken.id),
-    });
-
-    return refreshToken;
+    return newRefreshToken;
   }
 }

@@ -1,8 +1,12 @@
 import { validationResult } from "express-validator";
 
 export class AuthController {
-  constructor({ userService, logger, TokenService }) {
-    this.TokenService = TokenService;
+  tokenService;
+  userService;
+  logger;
+
+  constructor({ userService, logger, tokenService }) {
+    this.tokenService = tokenService;
     this.userService = userService;
     this.logger = logger;
   }
@@ -28,11 +32,13 @@ export class AuthController {
         sub: String(user.id),
         role: user.role,
       };
-      const accessToken = await this.TokenService.generateAccessToken(payload);
-      const refreshToken = await this.TokenService.generateRefreshToken(
-        payload,
-        user,
-      );
+
+      const newRefreshToken = await this.tokenService.persistRefreshToken(user);
+      const accessToken = await this.tokenService.generateAccessToken(payload);
+      const refreshToken = await this.tokenService.generateRefreshToken({
+        ...payload,
+        id: String(newRefreshToken.id),
+      });
 
       // : make cookie options (domain, secure, sameSite) environment-aware
       res.cookie("accessToken", accessToken, {
