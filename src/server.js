@@ -2,9 +2,12 @@ import { Config } from "./config/config.js";
 import process from "process";
 import logger from "./config/logger.js";
 import app from "./app.js";
+import { AppDataSource } from "./config/data-source.js";
 
-const StartServer = () => {
+const StartServer = async () => {
   try {
+    AppDataSource.initialize();
+    logger.info("Database connected successfully...");
     const port = Config.PORT || 1337;
     app.listen(port, () => {
       logger.info(`server is listening on port : ${port}`);
