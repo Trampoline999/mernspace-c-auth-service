@@ -9,18 +9,12 @@ export const RefreshToken = new EntitySchema({
       type: "int",
       generated: true,
     },
-    token: {
-      type: "varchar",
-      unique: true,
-    },
     createdAt: {
-      name: "created_at",
       type: "timestamp",
       createDate: true,
       default: () => "CURRENT_TIMESTAMP",
     },
     updatedAt: {
-      name: "updated_at",
       type: "timestamp",
       updateDate: true,
       default: () => "CURRENT_TIMESTAMP",

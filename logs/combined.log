@@ -580,3 +580,348 @@
 {"level":"error","message":"email already exists","serviceName":"auth-service"}
 {"level":"info","message":"user created succussfully","serviceName":"auth-service"}
 {"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'refreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"AppDataSource.findRepository is not a function","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"error","message":"No metadata for \"RefreshToken\" was found.","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"error","message":"Cannot access 'newRefreshToken' before initialization","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'generateAccessToken')","serviceName":"auth-service"}
