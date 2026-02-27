@@ -5,6 +5,7 @@ import logger from "../config/logger.js";
 import { AppDataSource } from "../config/data-source.js";
 import { User } from "../entity/User.js";
 import registerValidators from "../validators/register-validators.js";
+import loginValidators from "../validators/login-validators.js";
 import { TokenService } from "../services/tokenServices.js";
 import { RefreshToken } from "../entity/RefreshToken.js";
 
@@ -21,6 +22,10 @@ const authController = new AuthController({
 
 authRouter.post("/register", registerValidators, (req, res, next) =>
   authController.register(req, res, next),
+);
+
+authRouter.post("/login", loginValidators, (req, res, next) =>
+  authController.login(req, res, next),
 );
 
 export default authRouter;

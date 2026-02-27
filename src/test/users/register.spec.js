@@ -7,7 +7,7 @@ import {
   afterAll,
 } from "@jest/globals";
 import request from "supertest";
-import app from "../../app";
+import app from "../../app.js";
 import { AppDataSource } from "../../config/data-source.js";
 import { User } from "../../entity/User.js";
 import { Roles } from "../../constants/index.js";

@@ -25,7 +25,6 @@ export class UserService {
         password: hashedPassword,
         role: Roles.CUSTOMER,
       });
-      
     } catch (err) {
       if (err.status === 400) {
         throw err;
@@ -36,5 +35,11 @@ export class UserService {
       );
       throw error;
     }
+  }
+
+  async findByEmail(email) {
+    return await this.userRepository.findOne({
+      where: email,
+    });
   }
 }
