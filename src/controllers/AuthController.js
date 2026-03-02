@@ -124,8 +124,8 @@ export class AuthController {
         maxAge: 1000 * 60 * 60 * 24 * 7, // set ttl to 7 days
       });
 
-      this.logger.info("user created succussfully");
-      res.status(201).json({ id: user.id });
+      this.logger.info("user logged succussfully", { id: user.id });
+      res.status(200).json({ id: user.id });
     } catch (err) {
       next(err);
       return;

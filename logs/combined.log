@@ -10,3 +10,10 @@
 {"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service"}
 {"level":"error","message":"email already exists","serviceName":"auth-service"}
 {"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service"}

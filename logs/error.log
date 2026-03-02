@@ -1,3 +1,4 @@
 {"level":"error","message":"Cannot destructure property 'firstName' of 'req.body' as it is undefined.","serviceName":"auth-service"}
 {"level":"error","message":"Cannot destructure property 'firstName' of 'req.body' as it is undefined.","serviceName":"auth-service"}
 {"level":"error","message":"email already exists","serviceName":"auth-service"}
+{"level":"error","message":"email already exists","serviceName":"auth-service"}
