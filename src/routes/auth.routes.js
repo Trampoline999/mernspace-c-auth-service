@@ -8,16 +8,19 @@ import registerValidators from "../validators/register-validators.js";
 import loginValidators from "../validators/login-validators.js";
 import { TokenService } from "../services/tokenServices.js";
 import { RefreshToken } from "../entity/RefreshToken.js";
+import { CredentialService } from "../services/credentialService.js";
 
 const authRouter = express.Router();
 const userRepository = AppDataSource.getRepository(User);
 const refreshTokenRepository = AppDataSource.getRepository(RefreshToken);
 const userService = new UserService(userRepository);
 const tokenService = new TokenService(refreshTokenRepository);
+const credentialService = new CredentialService();
 const authController = new AuthController({
   userService,
   logger,
   tokenService,
+  credentialService,
 });
 
 authRouter.post("/register", registerValidators, (req, res, next) =>

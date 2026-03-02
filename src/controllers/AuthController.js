@@ -5,11 +5,13 @@ export class AuthController {
   tokenService;
   userService;
   logger;
+  credentialService;
 
-  constructor({ userService, logger, tokenService }) {
+  constructor({ userService, logger, tokenService, credentialService }) {
     this.tokenService = tokenService;
     this.userService = userService;
     this.logger = logger;
+    this.credentialService = credentialService;
   }
   // : add login and token refresh handlers alongside register
   async register(req, res, next) {
@@ -79,8 +81,20 @@ export class AuthController {
       });
 
       if (!user) {
-        const error = createHttpError(500, "email and password not exists");
+        const error = createHttpError(400, "email or password does not match");
         next(error);
+        return;
+      }
+
+      const passwordMatch = await this.credentialService.comparePassword(
+        password,
+        user.password,
+      );
+
+      if (!passwordMatch) {
+        const error = createHttpError(400, "email or password is invalid");
+        next(error);
+        return;
       }
 
       const payload = {
