@@ -6,6 +6,7 @@ export const User = new EntitySchema({
   columns: {
     id: {
       primary: true,
+      unique: true,
       type: "int", // PostgreSQL specific column type
       generated: true, // Auto-incrementing primary key
     },

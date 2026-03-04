@@ -7,11 +7,33 @@ import {
   afterAll,
 } from "@jest/globals";
 import { AppDataSource } from "../../config/data-source";
+import request from "supertest";
 import { User } from "../../entity/User";
+import app from "../../app";
+import bcrypt from "bcrypt";
+import { Roles } from "../../constants";
 
 describe("/auth/login", () => {
   let connection;
-  let userRepository;  //TODO: starts from here...
+  let userRepository;
+
+  let registerData = {
+    firstName: "onkar",
+    lastName: "chougule",
+    email: "onkarchougule@gmail.com",
+    password: "secret@123",
+  };
+  let userData = {
+    email: "onkarchougule@gmail.com",
+    password: "secret@123",
+  };
+
+  const registerUser = (userData) => {
+    return request(app).post("/auth/register").send(userData);
+  };
+  const loginUser = async (userData = {}) => {
+    return await request(app).post("/auth/login").send(userData);
+  };
 
   beforeAll(async () => {
     try {
@@ -37,4 +59,39 @@ describe("/auth/login", () => {
       await connection.destroy();
     }
   });
+
+  it("should return 200 status code", async () => {
+    // First create a user in the database
+    await registerUser(registerData);
+    await userRepository.findOne({
+      where: {
+        email: userData.email,
+      },
+    });
+
+    const response = await loginUser(userData);
+    expect(response.statusCode).toBe(200);
+  });
+
+  it("should check password is correct or not", async () => {
+    await registerUser(registerData);
+    const user = await userRepository.findOne({
+      where: {
+        email: userData.email,
+      },
+    });
+
+    const comparePassword = await bcrypt.compare(
+      userData.password,
+      user.password,
+    );
+    expect(comparePassword).toBe(true);
+  });
+
+  /* it("should return access and refresh Token",async ()=>{
+
+    await registerUser(registerData);
+    const response = 
+
+  }); */
 });
