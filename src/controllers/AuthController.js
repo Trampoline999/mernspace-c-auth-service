@@ -131,4 +131,8 @@ export class AuthController {
       return;
     }
   }
+
+  async self(req, res) {
+    res.json({});
+  }
 }

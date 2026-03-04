@@ -87,11 +87,4 @@ describe("/auth/login", () => {
     );
     expect(comparePassword).toBe(true);
   });
-
-  /* it("should return access and refresh Token",async ()=>{
-
-    await registerUser(registerData);
-    const response = 
-
-  }); */
 });

@@ -1,4 +1,4 @@
-/* import {
+import {
   describe,
   it,
   expect,
@@ -13,11 +13,10 @@ import app from "../../app";
 
 describe("/auth/login", () => {
   let connection;
-  let userRepository; //TODO: starts from here...
+  let userRepository;
 
-  const userData = { email: "onkarchougule@gmail.com", password: "secret@123" };
-  const loginUser = async (userData = {}) => {
-    return await request(app).post("/auth/login").send(userData);
+  const selfRoute = async () => {
+    return await request(app).get("/auth/self").send();
   };
 
   beforeAll(async () => {
@@ -43,5 +42,10 @@ describe("/auth/login", () => {
     if (connection && connection.isInitialized) {
       await connection.destroy();
     }
-  })
-}) */
+  });
+
+  it("should return 200 status code", async () => {
+    const response = await selfRoute();
+    expect(response.statusCode).toBe(200);
+  });
+});
