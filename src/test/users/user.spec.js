@@ -8,7 +8,7 @@ import {
   afterEach,
 } from "@jest/globals";
 import { AppDataSource } from "../../config/data-source";
-import { createJWKSMock } from "mock-jwks";
+import createJWKSMock from "mock-jwks";
 import request from "supertest";
 import { User } from "../../entity/User";
 import app from "../../app";
@@ -29,7 +29,7 @@ describe("/auth/self", () => {
   const selfRoute = async (accessToken) => {
     return await request(app)
       .get("/auth/self")
-      .set("cookie"[`accessToken=${accessToken}`])
+      .set("Cookie", [`accessToken=${accessToken}`])
       .send();
   };
 

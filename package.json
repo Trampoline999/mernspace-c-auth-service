@@ -19,7 +19,8 @@
     "http-errors": "^2.0.1",
     "jest": "^30.2.0",
     "lint-staged": "^16.2.7",
-    "mock-jwks": "^3.3.5",
+    "mock-jwks": "^3.1.0",
+    "msw": "^2.12.10",
     "nodemon": "^3.1.11",
     "prettier": "3.8.1"
   },
