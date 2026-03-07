@@ -17,6 +17,7 @@ const {
   DB_PASSWORD,
   DB_USERNAME,
   PRIVATE_KEY_SECRET,
+  JWKS_URI,
 } = process.env;
 
 export const Config = {
@@ -28,4 +29,5 @@ export const Config = {
   DB_PASSWORD,
   DB_USERNAME,
   PRIVATE_KEY_SECRET,
+  JWKS_URI,
 };
