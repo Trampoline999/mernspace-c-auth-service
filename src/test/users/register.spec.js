@@ -5,7 +5,6 @@ import {
   beforeAll,
   beforeEach,
   afterAll,
-
 } from "@jest/globals";
 import request from "supertest";
 import app from "../../app.js";
@@ -14,7 +13,6 @@ import { User } from "../../entity/User.js";
 import { Roles } from "../../constants/index.js";
 import { isJwt } from "../../utils/utils.js";
 import { RefreshToken } from "../../entity/RefreshToken.js";
-
 
 describe("POST /auth/register", () => {
   let connection;

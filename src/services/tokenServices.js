@@ -14,7 +14,7 @@ export class TokenService {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
     try {
-      // : load and cache private key at process startup instead of per-request I/O
+      
       privatekey = fs.readFileSync(
         path.join(__dirname, "../../certs/private.pem"),
       );
