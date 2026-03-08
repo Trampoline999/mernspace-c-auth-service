@@ -1,15 +1,8 @@
-import {
-  describe,
-  it,
-  expect,
-  beforeAll,
-  beforeEach,
-  afterAll,
-} from "@jest/globals";
-import { AppDataSource } from "../../config/data-source";
+import { describe, it, expect, beforeAll, beforeEach, afterAll } from "@jest/globals";
+import { AppDataSource } from "../../config/data-source.js";
 import request from "supertest";
-import { User } from "../../entity/User";
-import app from "../../app";
+import { User } from "../../entity/User.js";
+import app from "../../app.js";
 import bcrypt from "bcrypt";
 
 describe("/auth/login", () => {

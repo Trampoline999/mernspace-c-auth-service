@@ -1,14 +1,24 @@
 import { expressjwt } from "express-jwt";
-import { JwksClient } from "jwks-rsa";
-import { Config } from "../config/config";
+import jwksRsa from "jwks-rsa";
+import { Config } from "../config/config.js";
 
-export default expressjwt({
-  secret: JwksClient.expressjwt({
-    JWT_URI: Config.JWT_URI,
-    ratelimit: true,
-    algorithms: ["RSA256"],
+export const authenticate = expressjwt({
+  secret: jwksRsa.expressJwtSecret({
+    jwksUri: Config.JWKS_URI,
+    cache: true,
+    rateLimit: true,
   }),
-  getToken(){
-    
-  }
+  algorithms: ["RS256"],
+  getToken(req) {
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.split(" ")[1] !== undefined) {
+      const token = authHeader.split(" ")[1];
+
+      if (token) {
+        return token;
+      }
+    }
+    const { accessToken } = req.cookies;
+    return accessToken;
+  },
 });

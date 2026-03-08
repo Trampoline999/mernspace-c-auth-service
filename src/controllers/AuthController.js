@@ -133,6 +133,7 @@ export class AuthController {
   }
 
   async self(req, res) {
-    res.json({});
+    const user = await this.userService.findById(req.auth.id);
+    res.json({ id: user.id });
   }
 }
