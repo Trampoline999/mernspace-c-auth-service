@@ -1,18 +1,10 @@
-import {
-  describe,
-  it,
-  expect,
-  beforeAll,
-  beforeEach,
-  afterAll,
-  afterEach,
-} from "@jest/globals";
-import { AppDataSource } from "../../config/data-source";
+import { describe, it, expect, beforeAll, beforeEach, afterAll, afterEach } from "@jest/globals";
+import { AppDataSource } from "../../config/data-source.js";
 import createJWKSMock from "mock-jwks";
 import request from "supertest";
-import { User } from "../../entity/User";
-import app from "../../app";
-import { Roles } from "../../constants";
+import { User } from "../../entity/User.js";
+import app from "../../app.js";
+import { Roles } from "../../constants/index.js";
 
 describe("/auth/self", () => {
   let connection;
@@ -74,6 +66,7 @@ describe("/auth/self", () => {
       ...registerData,
       role: Roles.CUSTOMER,
     });
+
     let accessToken = await jwksMock.token(
       {
         sub: String(user.id),
@@ -81,6 +74,7 @@ describe("/auth/self", () => {
       },
       { issuer: "auth-service" },
     );
+
     let response = await selfRoute(accessToken);
     expect(response.body.id).toBe(user.id);
   });
