@@ -96,7 +96,7 @@ export class AuthController {
         next(error);
         return;
       }
-
+      console.log(user);
       const payload = {
         sub: String(user.id),
         role: user.role,
@@ -134,6 +134,6 @@ export class AuthController {
 
   async self(req, res) {
     const user = await this.userService.findById(req.auth.sub);
-    res.json({ id: user.id });
+    res.json(user);
   }
 }

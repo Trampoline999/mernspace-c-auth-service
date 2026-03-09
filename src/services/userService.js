@@ -43,11 +43,11 @@ export class UserService {
       where: {
         email,
       },
-      select: ["password"],
+      select: ["password", "id"],
     });
   }
 
-  async findById({ id }) {
+  async findById(id) {
     return this.userRepository.findOne({
       where: {
         id,

@@ -67,13 +67,14 @@ describe("/auth/self", () => {
   it("should return 200 status code", async () => {
     let accessToken = await jwksMock.token(
       {
-        sub: "213434",
-        role: "customer",
+        sub: String(1),
+        role: Roles.CUSTOMER,
       },
       { issuer: "auth-service" },
     );
     const response = await selfRoute(accessToken);
-    expect(response.statusCode).toBe(200);
+    console.log(response);
+    expect(response.status).toBe(200);
   });
 
   it("should return tokens", async () => {
@@ -109,6 +110,16 @@ describe("/auth/self", () => {
     );
 
     let response = await selfRoute(accessToken);
-    expect(Number(response.body)).not.toHaveProperty("password");
+    expect(response.body).not.toHaveProperty("password");
+  });
+
+  it("should 401 if authorization token does not exists", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    let response = await selfRoute();
+    expect(response.statusCode).toBe(401);
   });
 });
