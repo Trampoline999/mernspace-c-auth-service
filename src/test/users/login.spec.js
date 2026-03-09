@@ -1,4 +1,11 @@
-import { describe, it, expect, beforeAll, beforeEach, afterAll } from "@jest/globals";
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+} from "@jest/globals";
 import { AppDataSource } from "../../config/data-source.js";
 import request from "supertest";
 import { User } from "../../entity/User.js";
@@ -20,8 +27,8 @@ describe("/auth/login", () => {
     password: "secret@123",
   };
 
-  const registerUser = (userData) => {
-    return request(app).post("/auth/register").send(userData);
+  const registerUser = async (registerData) => {
+    return await request(app).post("/auth/register").send(registerData);
   };
   const loginUser = async (userData = {}) => {
     return await request(app).post("/auth/login").send(userData);

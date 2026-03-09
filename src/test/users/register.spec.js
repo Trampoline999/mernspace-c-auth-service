@@ -42,7 +42,7 @@ describe("POST /auth/register", () => {
       await connection.dropDatabase();
       console.log("Database dropped successfully.");
       await connection.synchronize();
-      userRepository = connection.getRepository(User);
+      userRepository = await connection.getRepository(User);
       // await truncateTable(connection);
     }
   });

@@ -1,4 +1,12 @@
-import { describe, it, expect, beforeAll, beforeEach, afterAll, afterEach } from "@jest/globals";
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+  afterEach,
+} from "@jest/globals";
 import { AppDataSource } from "../../config/data-source.js";
 import createJWKSMock from "mock-jwks";
 import request from "supertest";
@@ -57,7 +65,14 @@ describe("/auth/self", () => {
   });
 
   it("should return 200 status code", async () => {
-    const response = await selfRoute();
+    let accessToken = await jwksMock.token(
+      {
+        sub: "213434",
+        role: "customer",
+      },
+      { issuer: "auth-service" },
+    );
+    const response = await selfRoute(accessToken);
     expect(response.statusCode).toBe(200);
   });
 
@@ -76,6 +91,6 @@ describe("/auth/self", () => {
     );
 
     let response = await selfRoute(accessToken);
-    expect(response.body.id).toBe(user.id);
+    expect(Number(response.body.id)).toBe(user.id);
   });
 });

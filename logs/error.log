@@ -174,3 +174,16 @@
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-06 22:49:25"}
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-06 22:51:39"}
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-06 22:51:39"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:13:19"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:13:19"}
+{"level":"error","message":"relation \"RefreshTokens\" does not exist","serviceName":"auth-service","timestamp":"2026-03-09 09:13:22"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 09:13:22"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:13:22"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:13:22"}
+{"level":"error","message":"email or password does not match","serviceName":"auth-service","timestamp":"2026-03-09 09:13:22"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 09:13:24"}
+{"level":"error","message":"email or password does not match","serviceName":"auth-service","timestamp":"2026-03-09 09:13:25"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:25:22"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:25:22"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:28:40"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:28:40"}
