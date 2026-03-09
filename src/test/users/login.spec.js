@@ -66,6 +66,7 @@ describe("/auth/login", () => {
       where: {
         email: userData.email,
       },
+      select: ["password"],
     });
 
     const response = await loginUser(userData);
@@ -78,6 +79,7 @@ describe("/auth/login", () => {
       where: {
         email: userData.email,
       },
+      select: ["password"],
     });
 
     const comparePassword = await bcrypt.compare(

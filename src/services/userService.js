@@ -9,6 +9,7 @@ export class UserService {
     try {
       const user = await this.userRepository.findOne({
         where: { email: email },
+        select: ["password"],
       });
 
       if (user) {
@@ -42,10 +43,11 @@ export class UserService {
       where: {
         email,
       },
+      select: ["password"],
     });
   }
 
-  async findById({id}) {
+  async findById({ id }) {
     return this.userRepository.findOne({
       where: {
         id,

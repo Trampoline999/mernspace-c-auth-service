@@ -93,4 +93,22 @@ describe("/auth/self", () => {
     let response = await selfRoute(accessToken);
     expect(Number(response.body.id)).toBe(user.id);
   });
+
+  it("should not return password field", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    let accessToken = await jwksMock.token(
+      {
+        sub: String(user.id),
+        role: user.role,
+      },
+      { issuer: "auth-service" },
+    );
+
+    let response = await selfRoute(accessToken);
+    expect(Number(response.body)).not.toHaveProperty("password");
+  });
 });

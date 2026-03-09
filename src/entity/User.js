@@ -22,6 +22,7 @@ export const User = new EntitySchema({
     },
     password: {
       type: "varchar",
+      select: false,
     },
     role: {
       type: "varchar",

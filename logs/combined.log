@@ -1027,3 +1027,86 @@
 {"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:28:41"}
 {"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:28:41"}
 {"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:28:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:57"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:57"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:57"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:57"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:57"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:57"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:45:58"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:45:58"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:58"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:58"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:58"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:58"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:45:59"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 09:54:51"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:51"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:51"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:51"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:52"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:53"}
+{"level":"error","message":"data and hash arguments required","serviceName":"auth-service","timestamp":"2026-03-09 09:54:53"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:54:53"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 09:59:24"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 09:59:25"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:26"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:26"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:26"}
+{"level":"error","message":"data and hash arguments required","serviceName":"auth-service","timestamp":"2026-03-09 09:59:26"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 09:59:26"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 10:02:02"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:02"}
+{"level":"error","message":"data and hash arguments required","serviceName":"auth-service","timestamp":"2026-03-09 10:02:02"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:02"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:03"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:03"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:03"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:03"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:04"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:04"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 10:02:04"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 10:02:04"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:04"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:02:04"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 10:12:31"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:32"}
+{"level":"error","message":"data and hash arguments required","serviceName":"auth-service","timestamp":"2026-03-09 10:12:32"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:32"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:32"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:32"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:12:33"}
+{"level":"error","message":"Cannot read properties of null (reading 'id')","serviceName":"auth-service","timestamp":"2026-03-09 10:21:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:36"}
+{"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:36"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:36"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-09 10:21:38"}

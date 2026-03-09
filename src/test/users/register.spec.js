@@ -89,7 +89,7 @@ describe("POST /auth/register", () => {
   it("should store hashed password in database ", async () => {
     await registerUser(userData);
     userRepository = await connection.getRepository(User);
-    const users = await userRepository.find();
+    const users = await userRepository.find({ select: ["password"] });
 
     expect(users[0].password).not.toBe(userData.password);
     expect(users[0].password).toHaveLength(60);
