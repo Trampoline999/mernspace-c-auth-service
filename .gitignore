@@ -12,6 +12,9 @@ temp/
 .env.prod
 .env
 
+#public
+/public
+
 #certs
 certs/
 certs/private.pem
