@@ -97,6 +97,7 @@ export class AuthController {
         return;
       }
       console.log(user);
+      
       const payload = {
         sub: String(user.id),
         role: user.role,
