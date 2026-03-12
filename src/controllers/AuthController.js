@@ -96,11 +96,10 @@ export class AuthController {
         next(error);
         return;
       }
-      console.log(user);
-      
+
       const payload = {
         sub: String(user.id),
-        role: user.role,
+        role: user.role || "customer",
       };
 
       const newRefreshToken = await this.tokenService.persistRefreshToken(user);
@@ -138,7 +137,54 @@ export class AuthController {
     res.json(user);
   }
 
-  async refresh(req, res) {
-    res.json({});
+  async refresh(req, res, next) {
+    try {
+      const payload = {
+        sub: req.auth.id,
+        role: req.auth.role || "customer",
+      };
+
+      const user = await this.userService.findById(Number(req.auth.sub));
+
+      if (!user) {
+        const error = createHttpError(
+          400,
+          "user with token could not be found",
+        );
+        next(error);
+        return;
+      }
+      // token rotation: generating new token and deleting old token...
+      const newRefreshToken = await this.tokenService.persistRefreshToken(user);
+      //! deleting...
+      await this.tokenService.deleteRefreshToken(req.auth.id);
+      this.logger.info("token deleted succussfully");
+      const accessToken = await this.tokenService.generateAccessToken(payload);
+      const refreshToken = await this.tokenService.generateRefreshToken({
+        ...payload,
+        id: String(newRefreshToken.id),
+      });
+
+      // : make cookie options (domain, secure, sameSite) environment-aware
+      res.cookie("accessToken", accessToken, {
+        domain: "localhost",
+        httpOnly: true,
+        sameSite: "strict",
+        maxAge: 1000 * 60 * 60,
+      });
+
+      res.cookie("refreshToken", refreshToken, {
+        domain: "localhost",
+        httpOnly: true, // important
+        sameSite: "strict",
+        maxAge: 1000 * 60 * 60 * 24 * 7, // set ttl to 7 days
+      });
+
+      this.logger.info("user logged succussfully", { id: user.id });
+      res.status(200).json({ id: user.id });
+    } catch (err) {
+      next(err);
+      return;
+    }
   }
 }

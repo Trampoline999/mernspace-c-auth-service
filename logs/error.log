@@ -266,3 +266,18 @@
 {"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-12 09:55:02"}
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 09:55:03"}
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 09:55:03"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 22:03:50"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-12 22:41:18"}
+{"level":"error","message":"data and hash arguments required","serviceName":"auth-service","timestamp":"2026-03-12 22:41:19"}
+{"level":"error","message":"No authorization token was found","serviceName":"auth-service","timestamp":"2026-03-12 22:41:19"}
+{"level":"error","message":"No authorization token was found","serviceName":"auth-service","timestamp":"2026-03-12 23:00:40"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-12 23:00:44"}
+{"level":"error","message":"Property \"where\" was not found in \"RefreshToken\". Make sure your query is correct.","serviceName":"auth-service","timestamp":"2026-03-12 23:00:59"}
+{"level":"error","message":"Property \"where\" was not found in \"RefreshToken\". Make sure your query is correct.","serviceName":"auth-service","timestamp":"2026-03-12 23:05:22"}
+{"level":"error","message":"user with token could not be found","serviceName":"auth-service","timestamp":"2026-03-12 23:10:18"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:13:11"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:14:18"}

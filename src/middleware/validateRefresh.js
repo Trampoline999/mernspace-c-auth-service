@@ -1,10 +1,10 @@
-import { expressJwtSecret } from "jwks-rsa";
-import { Config } from "../config/config";
+import { expressjwt } from "express-jwt";
+import { Config } from "../config/config.js";
 import { AppDataSource } from "../config/data-source.js";
 import { RefreshToken } from "../entity/RefreshToken.js";
 import logger from "../config/logger.js";
 
-const validateRefresh = expressJwtSecret({
+const validateRefresh = expressjwt({
   secret: Config.PRIVATE_KEY_SECRET,
   algorithms: ["HS256"],
   getToken(req) {
@@ -14,6 +14,7 @@ const validateRefresh = expressJwtSecret({
   async isRevoked(req, token) {
     try {
       const RefreshTokenrepository = AppDataSource.getRepository(RefreshToken);
+      console.log(token);
       const refreshToken = await RefreshTokenrepository.findOne({
         where: {
           id: Number(token?.payload.id),
@@ -25,7 +26,6 @@ const validateRefresh = expressJwtSecret({
     } catch (err) {
       logger.error("error while getting the refresh Token:", token.payload.id);
     }
-
     return true;
   },
 });

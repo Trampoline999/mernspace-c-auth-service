@@ -1392,3 +1392,113 @@
 {"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 09:55:04"}
 {"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 09:55:04"}
 {"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 09:55:04"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:04:04"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:04:04"}
+{"id":4,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 21:04:22"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:10:59"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:10:59"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:11:01"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:11:01"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:11:02"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:11:02"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:11:09"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:11:09"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:11:13"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:11:13"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:11:15"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:11:15"}
+{"id":4,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 21:11:18"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:12:06"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:12:06"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:31:30"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:31:30"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 21:31:49"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 21:31:49"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 22:03:44"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 22:03:44"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 22:03:50"}
+{"id":4,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:03:57"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 22:13:15"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 22:13:15"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 22:14:29"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 22:14:29"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:15"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:15"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:15"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:15"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:16"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-12 22:41:18"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:19"}
+{"level":"error","message":"data and hash arguments required","serviceName":"auth-service","timestamp":"2026-03-12 22:41:19"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 22:41:19"}
+{"level":"error","message":"No authorization token was found","serviceName":"auth-service","timestamp":"2026-03-12 22:41:19"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:39"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:39"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:39"}
+{"level":"error","message":"No authorization token was found","serviceName":"auth-service","timestamp":"2026-03-12 23:00:40"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:00:41"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:42"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:00:42"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-12 23:00:44"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:00:55"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:00:55"}
+{"level":"error","message":"Property \"where\" was not found in \"RefreshToken\". Make sure your query is correct.","serviceName":"auth-service","timestamp":"2026-03-12 23:00:59"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:01:22"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:01:22"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:01:25"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:01:25"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:02:17"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:02:17"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:02:39"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:02:39"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:03:33"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:03:33"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:03:40"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:03:40"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:03:42"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:03:42"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:03:50"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:03:50"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:04:37"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:04:37"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:04:54"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:04:54"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:04:55"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:04:55"}
+{"level":"error","message":"Property \"where\" was not found in \"RefreshToken\". Make sure your query is correct.","serviceName":"auth-service","timestamp":"2026-03-12 23:05:22"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:06:51"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:06:51"}
+{"id":4,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:07:01"}
+{"id":4,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:08:18"}
+{"id":4,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-12 23:08:24"}
+{"level":"error","message":"user with token could not be found","serviceName":"auth-service","timestamp":"2026-03-12 23:10:18"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:10:52"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:10:52"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:11:02"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:11:02"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:11:05"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:11:05"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:11:07"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:11:07"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:11:09"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:11:09"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:11:17"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:11:17"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:11:26"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:11:26"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:13:11"}
+{"level":"info","message":"Database connected successfully...","serviceName":"auth-service","timestamp":"2026-03-12 23:14:09"}
+{"level":"info","message":"server is listening on port : 3000","serviceName":"auth-service","timestamp":"2026-03-12 23:14:09"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-12 23:14:18"}

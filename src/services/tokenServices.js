@@ -14,7 +14,6 @@ export class TokenService {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
     try {
-      
       privatekey = fs.readFileSync(
         path.join(__dirname, "../../certs/private.pem"),
       );
@@ -50,5 +49,11 @@ export class TokenService {
     });
 
     return newRefreshToken;
+  }
+
+  async deleteRefreshToken(tokenId) {
+    return await this.refreshTokenRepository.delete({
+      id: tokenId,
+    });
   }
 }

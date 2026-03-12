@@ -43,7 +43,7 @@ export class UserService {
       where: {
         email,
       },
-      select: ["password", "id"],
+      select: ["password", "id", "role"],
     });
   }
 
