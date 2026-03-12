@@ -47,7 +47,7 @@ describe("/auth/self", () => {
     jwksMock.start();
     if (connection && connection.isInitialized) {
       await connection.dropDatabase();
-      console.log("Database dropped successfully.");
+      // console.log("Database dropped successfully.");
       await connection.synchronize();
       userRepository = connection.getRepository(User); // getting userRepo here only when a new empty clean database is created
       // await truncateTable(connection);
@@ -73,7 +73,6 @@ describe("/auth/self", () => {
       { issuer: "auth-service" },
     );
     const response = await selfRoute(accessToken);
-    console.log(response);
     expect(response.status).toBe(200);
   });
 
@@ -114,7 +113,7 @@ describe("/auth/self", () => {
   });
 
   it("should 401 if authorization token does not exists", async () => {
-    let user = await userRepository.save({
+    await userRepository.save({
       ...registerData,
       role: Roles.CUSTOMER,
     });

@@ -46,7 +46,7 @@ describe("/auth/login", () => {
   beforeEach(async () => {
     if (connection && connection.isInitialized) {
       await connection.dropDatabase();
-      console.log("Database dropped successfully.");
+     // console.log("Database dropped successfully.");
       await connection.synchronize();
       userRepository = await connection.getRepository(User);
       // await truncateTable(connection);

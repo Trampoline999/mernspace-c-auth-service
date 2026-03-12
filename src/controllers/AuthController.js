@@ -136,4 +136,8 @@ export class AuthController {
     const user = await this.userService.findById(req.auth.sub);
     res.json(user);
   }
+
+  async refresh(req, res) {
+    res.json({});
+  }
 }
