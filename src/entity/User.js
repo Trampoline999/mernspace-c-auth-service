@@ -27,5 +27,12 @@ export const User = new EntitySchema({
     role: {
       type: "varchar",
     },
+    relations: {
+    refreshTokens: {
+    type: "one-to-many",
+    target: "RefreshToken",       // ✅ must match name in RefreshToken entity
+    inverseSide: "user",          // ✅ must match the key in RefreshToken's relations
+  },
+},
   },
 });
