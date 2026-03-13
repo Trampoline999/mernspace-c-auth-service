@@ -329,3 +329,7 @@
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-13 10:28:11"}
 {"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-13 10:28:12"}
 {"level":"error","message":"No authorization token was found","serviceName":"auth-service","timestamp":"2026-03-13 10:43:34"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-13 10:59:56"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-13 10:59:57"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-13 10:59:57"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-13 10:59:59"}
