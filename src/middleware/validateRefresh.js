@@ -14,11 +14,11 @@ const validateRefresh = expressjwt({
   async isRevoked(req, token) {
     try {
       const RefreshTokenrepository = AppDataSource.getRepository(RefreshToken);
-      console.log(token);
+      //console.log(token);
       const refreshToken = await RefreshTokenrepository.findOne({
         where: {
           id: Number(token?.payload.id),
-          user: Number({ id: token?.payload.sub }),
+          user: { id: Number(token?.payload.sub) },
         },
       });
       return refreshToken === null;

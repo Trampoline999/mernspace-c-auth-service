@@ -9,7 +9,6 @@ export class UserService {
     try {
       const user = await this.userRepository.findOne({
         where: { email: email },
-        select: ["password"],
       });
 
       if (user) {
@@ -39,12 +38,11 @@ export class UserService {
   }
 
   async findByEmail({ email }) {
-    return this.userRepository.findOne({
-      where: {
-        email,
-      },
-      select: ["password", "id", "role"],
-    });
+    return this.userRepository
+      .createQueryBuilder("user")
+      .addSelect("user.password") // brings back the select:false field
+      .where("user.email = :email", { email })
+      .getOne();
   }
 
   async findById(id) {
