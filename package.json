@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/server.js",
     "lint:check": "eslint .",
-    "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
+    "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "migration:generate": "typeorm migration:generate src/migration/migration -d src/config/data-source.js --outputJs --esm",
+    "migration:run": "cross-env NODE_ENV=dev typeorm migration:run -d src/config/data-source.js",
+    "migration:create": "typeorm migration:create src/migration/migration --outputJs --esm"
   },
   "author": "onkar chougule",
   "license": "ISC",
