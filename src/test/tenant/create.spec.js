@@ -9,9 +9,16 @@ import {
 import { AppDataSource } from "../../config/data-source.js";
 import request from "supertest";
 import app from "../../app.js";
+import { Tenant } from "../../entity/Tenants.js";
 
 describe("POST /tenants", () => {
   let connection;
+  let tenantRepository;
+
+  const tenantData = {
+    name: "Naturals",
+    address: "2nd Rd BabaNagar yelahanka",
+  };
 
   const createTenant = async (tenantData = {}) => {
     return request(app).post("/tenants").send(tenantData);
@@ -31,6 +38,7 @@ describe("POST /tenants", () => {
       await connection.dropDatabase();
       // console.log("Database dropped successfully.");
       await connection.synchronize();
+      tenantRepository = await connection.getRepository(Tenant);
     }
   });
 
@@ -43,5 +51,12 @@ describe("POST /tenants", () => {
   it("should return 200 status code", async () => {
     const response = await createTenant();
     expect(response.statusCode).toBe(200);
+  });
+
+  it("should return name and address of tenant", async () => {
+    await createTenant();
+    const tenant = await tenantRepository.find();
+    expect(tenant[0].name).toBe(tenantData.name);
+    expect(tenant[0].address).toBe(tenantData.address);
   });
 });
