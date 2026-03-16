@@ -7,7 +7,7 @@ export const User = new EntitySchema({
     id: {
       primary: true,
       unique: true,
-      type: "int", // PostgreSQL specific column type
+      type: "int",
       generated: true, // Auto-incrementing primary key
     },
     firstName: {
@@ -27,20 +27,21 @@ export const User = new EntitySchema({
     role: {
       type: "varchar",
     },
+    tenantId: {
+      type: "int",
+    },
   },
+
   relations: {
     refreshTokens: {
       type: "one-to-many",
       target: "RefreshToken",
       inverseSide: "user",
     },
-
-    relations: {
-      user: {
-        type: "one-to-many",
-        target: "Tenant",
-        joinColumn: true,
-      },
+    user: {
+      type: "many-to-one",
+      target: "Tenant",
+      joinColumn: { name: "tenantId" },
     },
   },
 });

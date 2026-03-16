@@ -9,6 +9,9 @@ export const RefreshToken = new EntitySchema({
       type: "int",
       generated: true,
     },
+    userId: {
+      type: "int",
+    },
     createdAt: {
       type: "timestamp",
       createDate: true,
@@ -25,7 +28,7 @@ export const RefreshToken = new EntitySchema({
     user: {
       type: "many-to-one",
       target: "User",
-      joinColumn: true,
+      joinColumn: { name: "userId" },
     },
   },
 });

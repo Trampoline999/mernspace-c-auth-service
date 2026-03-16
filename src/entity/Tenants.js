@@ -18,4 +18,11 @@ export const Tenant = new EntitySchema({
       length: 255,
     },
   },
+  relations: {
+    users: {
+      type: "one-to-many", 
+      target: "User",
+      inverseSide: "tenant",
+    },
+  },
 });

@@ -1775,3 +1775,47 @@
 {"level":"info","message":"token deleted succussfully","serviceName":"auth-service","timestamp":"2026-03-16 17:27:55"}
 {"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-16 17:27:55"}
 {"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 17:27:55"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:45"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:38:46"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 21:42:36"}
+{"level":"info","message":"token deleted succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:36"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:36"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 21:42:36"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:37"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:37"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:38"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:42:39"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 21:53:34"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:34"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:36"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:36"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:36"}
+{"level":"info","message":"token deleted succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:37"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-16 21:53:37"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 21:53:37"}
