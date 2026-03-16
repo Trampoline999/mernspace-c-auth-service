@@ -2,6 +2,7 @@ import express from "express";
 import logger from "./config/logger.js";
 import authRouter from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
+import tenantRouter from "./routes/tenant.routes.js";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRouter);
+app.use("/tenants", tenantRouter);
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {

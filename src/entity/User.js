@@ -29,6 +29,7 @@ export const User = new EntitySchema({
     },
     tenantId: {
       type: "int",
+      nullable: true,
     },
   },
 
@@ -42,6 +43,7 @@ export const User = new EntitySchema({
       type: "many-to-one",
       target: "Tenant",
       joinColumn: { name: "tenantId" },
+      nullable: true,
     },
   },
 });

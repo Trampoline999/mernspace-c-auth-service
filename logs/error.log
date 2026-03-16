@@ -354,3 +354,11 @@
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 21:53:35"}
 {"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 21:53:37"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 22:49:48"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 22:49:50"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 22:49:50"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 22:49:51"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 22:51:13"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 22:51:14"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-16 22:51:14"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-16 22:51:15"}
