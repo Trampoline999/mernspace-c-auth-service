@@ -14,6 +14,7 @@ export class AuthController {
     this.credentialService = credentialService;
   }
   // : add login and token refresh handlers alongside register
+  
   async register(req, res, next) {
     try {
       const { firstName, lastName, email, password } = req.body;

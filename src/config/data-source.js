@@ -15,6 +15,6 @@ export const AppDataSource = new DataSource({
   synchronize: Config.NODE_ENV == "test" || Config.NODE_ENV == "dev",
   logging: false,
   entities: [User, RefreshToken],
-  migrations: ["src/migration/*.js"],
+  migrations: Config.NODE_ENV === "test" ? [] : ["src/migration/*.js"],
   subscribers: [],
 });

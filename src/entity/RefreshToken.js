@@ -2,7 +2,7 @@ import { EntitySchema } from "typeorm";
 
 export const RefreshToken = new EntitySchema({
   name: "RefreshToken",
-  tableName: "RefreshTokens",
+  tableName: "refreshTokens",
   columns: {
     id: {
       primary: true,
