@@ -14,7 +14,7 @@ export class AuthController {
     this.credentialService = credentialService;
   }
   // : add login and token refresh handlers alongside register
-  
+
   async register(req, res, next) {
     try {
       const { firstName, lastName, email, password } = req.body;
@@ -194,10 +194,13 @@ export class AuthController {
       const tokenId = Number(req.auth.id);
       await this.tokenService.deleteRefreshToken(tokenId);
       this.logger.info("refresh token Deleted successfully");
+
       console.log("user logged out successfully :", req.auth.sub);
+
       res.clearCookie("accessToken");
       res.clearCookie("refreshToken");
-      res.status(200).json({});
+
+      res.status(200).json({ message: "user logout successfully" });
     } catch (err) {
       next(err);
       return;

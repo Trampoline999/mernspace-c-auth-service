@@ -48,15 +48,17 @@ describe("POST /tenants", () => {
     }
   });
 
-  it("should return 200 status code", async () => {
-    const response = await createTenant();
-    expect(response.statusCode).toBe(200);
+  it("should return 201 status code", async () => {
+    const response = await createTenant(tenantData);
+    expect(response.statusCode).toBe(201);
   });
 
   it("should return name and address of tenant", async () => {
-    await createTenant();
-    const tenant = await tenantRepository.find();
-    expect(tenant[0].name).toBe(tenantData.name);
-    expect(tenant[0].address).toBe(tenantData.address);
+    await createTenant(tenantData);
+    const tenants = await tenantRepository.find({});
+
+    expect(tenants).toHaveLength(1);
+    expect(tenants[0].name).toBe(tenantData.name);
+    expect(tenants[0].address).toBe(tenantData.address);
   });
 });
