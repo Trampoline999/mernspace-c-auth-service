@@ -12,7 +12,6 @@ import request from "supertest";
 import createJWKSMock from "mock-jwks";
 import app from "../../app.js";
 import { Tenant } from "../../entity/Tenants.js";
-import { response } from "express";
 import { Roles } from "../../constants/index.js";
 
 describe("POST /tenants", () => {
@@ -84,6 +83,19 @@ describe("POST /tenants", () => {
 
   it("should return 401 if user is not authenticated", async () => {
     const response = await createTenant(tenantData);
+
+    expect(response.statusCode).toBe(401);
+    const tenants = await tenantRepository.find({});
+
+    expect(tenants).toHaveLength(0);
+  });
+
+  it("should return 403 if user is not Manager", async () => {
+    const ManagerToken = jwksMock.token({
+      sub: "1",
+      roles: "manager",
+    });
+    const response = await createTenant(tenantData, adminToken, ManagerToken);
 
     expect(response.statusCode).toBe(401);
     const tenants = await tenantRepository.find({});
