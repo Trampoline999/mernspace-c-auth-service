@@ -5,27 +5,37 @@ import {
   beforeAll,
   beforeEach,
   afterAll,
+  afterEach,
 } from "@jest/globals";
 import { AppDataSource } from "../../config/data-source.js";
 import request from "supertest";
+import createJWKSMock from "mock-jwks";
 import app from "../../app.js";
 import { Tenant } from "../../entity/Tenants.js";
+import { response } from "express";
+import { Roles } from "../../constants/index.js";
 
 describe("POST /tenants", () => {
   let connection;
   let tenantRepository;
+  let jwksMock;
+  let adminToken;
 
   const tenantData = {
     name: "Naturals",
     address: "2nd Rd BabaNagar yelahanka",
   };
 
-  const createTenant = async (tenantData = {}) => {
-    return request(app).post("/tenants").send(tenantData);
+  const createTenant = async (tenantData = {}, accessToken) => {
+    return request(app)
+      .post("/tenants")
+      .set("Cookie", [`accessToken=${accessToken}`])
+      .send(tenantData);
   };
 
   beforeAll(async () => {
     try {
+      jwksMock = createJWKSMock("http://localhost:3000");
       connection = await AppDataSource.initialize();
     } catch (error) {
       console.error("Error during Data Source initialization:", error);
@@ -34,12 +44,18 @@ describe("POST /tenants", () => {
   });
 
   beforeEach(async () => {
+    jwksMock.start();
     if (connection && connection.isInitialized) {
       await connection.dropDatabase();
       // console.log("Database dropped successfully.");
       await connection.synchronize();
       tenantRepository = await connection.getRepository(Tenant);
     }
+
+    adminToken = jwksMock.token({
+      sub: "1",
+      roles: Roles.ADMIN,
+    });
   });
 
   afterAll(async () => {
@@ -48,16 +64,31 @@ describe("POST /tenants", () => {
     }
   });
 
+  afterEach(() => {
+    jwksMock.stop();
+  });
+
   it("should return 201 status code", async () => {
-    const response = await createTenant(tenantData);
+    const response = await createTenant(tenantData, adminToken);
     expect(response.statusCode).toBe(201);
   });
 
   it("should return name and address of tenant", async () => {
-    await createTenant(tenantData);
+    await createTenant(tenantData, adminToken);
     const tenants = await tenantRepository.find({});
 
     expect(tenants).toHaveLength(1);
+    expect(tenants[0].name).toBe(tenantData.name);
+    expect(tenants[0].address).toBe(tenantData.address);
+  });
+
+  it("should return 401 if user is not authenticated", async () => {
+    const response = await createTenant(tenantData, adminToken);
+
+    expect(response.statusCode).toBe(401);
+    const tenants = await tenantRepository.find({});
+
+    expect(tenants).toHaveLength(0);
     expect(tenants[0].name).toBe(tenantData.name);
     expect(tenants[0].address).toBe(tenantData.address);
   });
