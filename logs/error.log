@@ -447,3 +447,7 @@
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-18 22:41:42"}
 {"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-18 22:41:42"}
 {"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-18 22:41:43"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-18 22:43:52"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-18 22:43:55"}

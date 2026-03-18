@@ -19,3 +19,6 @@ temp/
 certs/
 certs/private.pem
 certs/public.pem
+
+#logs
+logs/

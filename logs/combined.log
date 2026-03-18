@@ -2163,3 +2163,23 @@
 {"level":"info","message":"token deleted succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:41:43"}
 {"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:41:43"}
 {"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-18 22:41:43"}
+{"id":1,"level":"info","message":"tenant has been created.","serviceName":"auth-service","timestamp":"2026-03-18 22:43:50"}
+{"id":1,"level":"info","message":"tenant has been created.","serviceName":"auth-service","timestamp":"2026-03-18 22:43:50"}
+{"id":1,"level":"info","message":"tenant has been created.","serviceName":"auth-service","timestamp":"2026-03-18 22:43:50"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-18 22:43:52"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-18 22:43:53"}
+{"level":"error","message":"email already exists","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:54"}
+{"level":"info","message":"user created succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:55"}
+{"level":"info","message":"token deleted succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:55"}
+{"id":1,"level":"info","message":"user logged succussfully","serviceName":"auth-service","timestamp":"2026-03-18 22:43:55"}
+{"level":"error","message":"jwt malformed","serviceName":"auth-service","timestamp":"2026-03-18 22:43:55"}
