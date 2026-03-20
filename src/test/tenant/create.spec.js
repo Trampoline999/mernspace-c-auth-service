@@ -21,7 +21,7 @@ describe("POST /tenants", () => {
   let adminToken;
 
   const tenantData = {
-    name: "Naturals",
+    name: "Baskin robin",
     address: "2nd Rd BabaNagar yelahanka",
   };
 
@@ -53,7 +53,7 @@ describe("POST /tenants", () => {
 
     adminToken = jwksMock.token({
       sub: "1",
-      roles: Roles.ADMIN,
+      role: Roles.ADMIN,
     });
   });
 
@@ -91,13 +91,13 @@ describe("POST /tenants", () => {
   });
 
   it("should return 403 if user is not Manager", async () => {
-    const ManagerToken = jwksMock.token({
+    const managerToken = jwksMock.token({
       sub: "1",
-      roles: "manager",
+      role: Roles.MANAGER,
     });
-    const response = await createTenant(tenantData, adminToken, ManagerToken);
+    const response = await createTenant(tenantData, managerToken);
 
-    expect(response.statusCode).toBe(401);
+    expect(response.statusCode).toBe(403);
     const tenants = await tenantRepository.find({});
 
     expect(tenants).toHaveLength(0);
