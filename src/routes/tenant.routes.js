@@ -20,4 +20,11 @@ tenantRouter.post(
   (req, res, next) => tenant.create(req, res, next),
 );
 
+tenant.get("/tenants", (req, res, next) =>
+  tenant.getAllTenants(req, res, next),
+);
+tenant.get("/tenants/:id", (req, res, next) =>
+  tenant.getTenant(req, res, next),
+);
+
 export default tenantRouter;
