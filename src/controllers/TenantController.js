@@ -7,6 +7,7 @@ export class TenantController {
     this.tenantService = tenantService;
     this.logger = logger;
   }
+
   async create(req, res, next) {
     const { name, address } = req.body;
 
@@ -40,6 +41,32 @@ export class TenantController {
         return;
       }
       res.status(200).json({ id: tenant.id });
+    } catch (err) {
+      next(err);
+      return;
+    }
+  }
+
+  async updateTenant(req, res, next) {
+    const id = req.params.id;
+    const { name, address } = req.body;
+    try {
+      const tenant = await this.tenantService.updateTenant(id, {
+        name,
+        address,
+      });
+      res.status(200).json({ id: tenant.id });
+    } catch (err) {
+      next(err);
+      return;
+    }
+  }
+
+  async deleteTenant(req, res, next) {
+    const id = req.params.id;
+    try {
+      await this.tenantService.getTenantById(id);
+      res.status(200).json({});
     } catch (err) {
       next(err);
       return;

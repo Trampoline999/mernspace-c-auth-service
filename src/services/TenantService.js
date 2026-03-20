@@ -30,4 +30,36 @@ export class TenantService {
       throw err;
     }
   }
+
+  async updateTenantById(id, { name, address }) {
+    try {
+      const tenant = await this.tenantRepository.findOne({
+        where: {
+          id: id,
+        },
+      });
+
+      tenant.name = name;
+      tenant.address = address;
+
+      return await this.tenantRepository.save(tenant);
+    } catch {
+      const err = createHttpError(500, "error while updating tenants data");
+      throw err;
+    }
+  }
+
+  async deleteTenantById(id) {
+    try {
+      const tenant = await this.tenantRepository.findOne({ where: { id } });
+      if (!tenant) {
+        const err = createHttpError(404, `Tenant with id ${id} not found`);
+        throw err;
+      }
+      return await this.tenantRepository.delete(id);
+    } catch {
+      const err = createHttpError(500, "error deleting tenant data");
+      throw err;
+    }
+  }
 }

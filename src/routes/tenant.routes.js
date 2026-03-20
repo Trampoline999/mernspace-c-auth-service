@@ -27,4 +27,18 @@ tenant.get("/tenants/:id", (req, res, next) =>
   tenant.getTenant(req, res, next),
 );
 
+tenantRouter.post(
+  "/tenants/:id",
+  authenticate,
+  canAccess([Roles.ADMIN]),
+  (req, res, next) => tenant.updateTenant(req, res, next),
+);
+
+tenantRouter.delete(
+  "/tenants/:id",
+  authenticate,
+  canAccess([Roles.ADMIN]),
+  (req, res, next) => tenant.deleteTenant(req, res, next),
+);
+
 export default tenantRouter;
