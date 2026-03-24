@@ -1,11 +1,10 @@
 import createHttpError from "http-errors";
 import bcrypt from "bcrypt";
-import { Roles } from "../constants/index.js";
 export class UserService {
   constructor(userRepository) {
     this.userRepository = userRepository;
   }
-  async create({ firstName, lastName, email, password }) {
+  async create({ firstName, lastName, email, password, role }) {
     try {
       const user = await this.userRepository.findOne({
         where: { email: email },
@@ -23,7 +22,7 @@ export class UserService {
         lastName,
         email,
         password: hashedPassword,
-        role: Roles.CUSTOMER,
+        role,
       });
     } catch (err) {
       if (err.status === 400) {

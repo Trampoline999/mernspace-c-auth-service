@@ -27,10 +27,10 @@ describe("/users", () => {
     tenantId: "1",
   };
 
-  const selfRoute = async (accessToken) => {
+  const getUsers = async (adminToken) => {
     return await request(app)
       .get("/users")
-      .set("Cookie", [`accessToken=${accessToken}`])
+      .set("Cookie", [`accessToken=${adminToken}`])
       .send();
   };
 
@@ -74,12 +74,14 @@ describe("/users", () => {
     let accessToken = await jwksMock.token(
       {
         sub: String(user.id),
-        role: user.role,
+        role: Roles.MANAGER,
       },
       { issuer: "auth-service" },
     );
 
-    let response = await selfRoute(accessToken);
+    await getUsers(accessToken);
+
+    const users = userRepository.find({});
     expect(users).toHaveLength(1);
   });
 });

@@ -1,5 +1,6 @@
 import { validationResult } from "express-validator";
 import createHttpError from "http-errors";
+import { Roles } from "../constants";
 
 export class AuthController {
   tokenService;
@@ -30,6 +31,7 @@ export class AuthController {
         lastName,
         email,
         password,
+        role: Roles.CUSTOMER,
       });
 
       const payload = {
