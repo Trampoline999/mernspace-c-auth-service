@@ -65,7 +65,7 @@ export class UserService {
         role,
         tenant: id ? { id: tenantId } : null,
       });
-    } catch (error) {
+    } catch () {
       const err = createHttpError(
         500,
         "Failed to update the user in the database",
