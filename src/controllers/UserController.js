@@ -52,14 +52,28 @@ export class UserController {
 
   async update(req, res, next) {
     try {
+      const id = req.params.id;
       const { firstName, lastName, email, password } = req.body;
-      const user = await this.userService.create({
+
+      if (!firstName || !lastName || !email || !password) {
+        const err = createHttpError(401, "missing fields");
+        next(err);
+      }
+
+      user.firstName = firstName;
+      user.lastName = lastName;
+      user.email = email;
+      user.password = password;
+
+      const user = await this.userService.create(id, {
         firstName,
         lastName,
         email,
         password,
         role: Roles.CUSTOMER,
       });
+
+      this.logger.info("user updated successfully");
       res.status(201).json({ id: user.id });
     } catch (err) {
       next(err);

@@ -55,4 +55,12 @@ export class UserService {
   async getAllUsers() {
     return await this.userRepository.find({});
   }
+
+  async updateUser(id, { firstName, lastName, email, password, role }) {
+    return await this.userRepository.findOne({
+      where: {
+        id: id,
+      },
+    });
+  }
 }
