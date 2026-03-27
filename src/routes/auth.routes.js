@@ -1,14 +1,14 @@
 import express from "express";
 import { AuthController } from "../controllers/AuthController.js";
-import { UserService } from "../services/userService.js";
+import { UserService } from "../services/UserService.js";
 import logger from "../config/logger.js";
 import { AppDataSource } from "../config/data-source.js";
 import { User } from "../entity/User.js";
 import registerValidators from "../validators/register-validators.js";
 import loginValidators from "../validators/login-validators.js";
-import { TokenService } from "../services/tokenServices.js";
+import { TokenService } from "../services/TokenServices.js";
 import { RefreshToken } from "../entity/RefreshToken.js";
-import { CredentialService } from "../services/credentialService.js";
+import { CredentialService } from "../services/CredentialService.js";
 import { authenticate } from "../middleware/authenticate.js";
 import validateRefresh from "../middleware/validateRefresh.js";
 import parsedToken from "../middleware/parseToken.js";
