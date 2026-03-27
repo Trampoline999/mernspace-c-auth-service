@@ -34,7 +34,7 @@ export class TenantController {
   async getTenant(req, res, next) {
     const id = req.params.id;
     try {
-      const tenant = await this.tenantService.getTenantById(id);
+      const tenant = await this.tenantService.getTenantById(Number(id));
       if (!tenant) {
         const err = createHttpError(404, `Tenant with id ${id} not found`);
         next(err);
@@ -51,7 +51,7 @@ export class TenantController {
     const id = req.params.id;
     const { name, address } = req.body;
     try {
-      const tenant = await this.tenantService.updateTenant(id, {
+      const tenant = await this.tenantService.updateTenant(Number(id), {
         name,
         address,
       });
@@ -65,7 +65,7 @@ export class TenantController {
   async deleteTenant(req, res, next) {
     const id = req.params.id;
     try {
-      await this.tenantService.getTenantById(id);
+      await this.tenantService.getTenantById(Number(id));
       res.status(200).json({});
     } catch (err) {
       next(err);

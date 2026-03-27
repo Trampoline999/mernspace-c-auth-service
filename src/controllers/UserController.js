@@ -1,5 +1,6 @@
 import createHttpError from "http-errors";
 import { Roles } from "../constants";
+import { validationResult } from "express-validator";
 
 export class UserController {
   userService;
@@ -42,7 +43,7 @@ export class UserController {
   async getUser(req, res, next) {
     try {
       const id = req.params.id;
-      const user = await this.userService.findById(id);
+      const user = await this.userService.findById(Number(id));
       res.status(201).json({ id: user.id });
     } catch (err) {
       next(err);
@@ -52,29 +53,23 @@ export class UserController {
 
   async update(req, res, next) {
     try {
-      const id = req.params.id;
-      const { firstName, lastName, email, password } = req.body;
-
-      if (!firstName || !lastName || !email || !password) {
-        const err = createHttpError(401, "missing fields");
-        next(err);
+      const result = validationResult(req);
+      if (!result.isEmpty()) {
+        return res.status(400).json({ errors: result.array() });
       }
+      const id = req.params.id;
+      const { firstName, lastName, email, role, tenantId } = req.body;
 
-      user.firstName = firstName;
-      user.lastName = lastName;
-      user.email = email;
-      user.password = password;
-
-      const user = await this.userService.create(id, {
+      const updatedUser = await this.userService.updateUser(Number(id), {
         firstName,
         lastName,
         email,
-        password,
-        role: Roles.CUSTOMER,
+        role,
+        tenantId,
       });
 
       this.logger.info("user updated successfully");
-      res.status(201).json({ id: user.id });
+      res.status(201).json({ id: updatedUser.id });
     } catch (err) {
       next(err);
       return;
@@ -84,7 +79,7 @@ export class UserController {
   async delete(req, res, next) {
     try {
       const id = req.params.id;
-      const user = await this.userService.findById(id);
+      const user = await this.userService.findById(Number(id));
 
       if (!user) {
         const err = createHttpError(401, "invalid token no user found...");

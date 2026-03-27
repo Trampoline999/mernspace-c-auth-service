@@ -56,11 +56,25 @@ export class UserService {
     return await this.userRepository.find({});
   }
 
-  async updateUser(id, { firstName, lastName, email, password, role }) {
-    return await this.userRepository.findOne({
+  async updateUser(id, { firstName, lastName, email, role, tenantId }) {
+    const user = await this.userRepository.findOne({
       where: {
         id: id,
       },
+    });
+    if (!user) {
+      const err = createHttpError(400, "user not found");
+      throw err;
+    }
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+    return await this.userRepository.save({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+      role,
     });
   }
 }
