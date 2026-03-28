@@ -21,9 +21,15 @@ userRouter.get("/", authenticate, canAccess([Roles.ADMIN]), (req, res, next) =>
 userRouter.get("/:id", authenticate, (req, res, next) =>
   userController.getUser(req, res, next),
 );
-userRouter.patch("/:id", authenticate, (req, res, next) =>
-  userController.update(req, res, next),
+userRouter.patch(
+  "/:id",
+  authenticate,
+  canAccess([Roles.ADMIN]),
+  (req, res, next) => userController.update(req, res, next),
 );
-userRouter.delete("/:id", authenticate, (req, res, next) =>
-  userController.delete(req, res, next),
+userRouter.delete(
+  "/:id",
+  authenticate,
+  canAccess([Roles.ADMIN]),
+  (req, res, next) => userController.delete(req, res, next),
 );
