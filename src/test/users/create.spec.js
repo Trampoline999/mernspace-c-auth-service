@@ -13,18 +13,19 @@ import request from "supertest";
 import { User } from "../../entity/User.js";
 import app from "../../app.js";
 import { Roles } from "../../constants/index.js";
+import { Tenant } from "../../entity/Tenants.js";
 
 describe("/users", () => {
   let connection;
   let jwksMock;
   let userRepository;
+  let tenantRepository;
 
   let registerData = {
     firstName: "onkar",
     lastName: "chougule",
     email: "onkarchougule@gmail.com",
     password: "secret@123",
-    tenantId: "1",
   };
 
   const getUsers = async (adminToken) => {
@@ -50,7 +51,9 @@ describe("/users", () => {
       await connection.dropDatabase();
       // console.log("Database dropped successfully.");
       await connection.synchronize();
-      userRepository = connection.getRepository(User); // getting userRepo here only when a new empty clean database is created
+      userRepository = connection.getRepository(User);
+      tenantRepository = connection.getRepository(Tenant);
+      
       // await truncateTable(connection);
     }
   });
@@ -66,8 +69,10 @@ describe("/users", () => {
   });
 
   it("should return tokens", async () => {
+    const tenant = await tenantRepository.save({ name: "Test Tenant", address: "Test Address" });
     let user = await userRepository.save({
       ...registerData,
+      tenantId:tenant.id,
       role: Roles.MANAGER,
     });
 
@@ -81,7 +86,7 @@ describe("/users", () => {
 
     await getUsers(accessToken);
 
-    const users = userRepository.find({});
+    const users = await userRepository.find({});
     expect(users).toHaveLength(1);
   });
 });

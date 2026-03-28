@@ -33,3 +33,6 @@ userRouter.delete(
   canAccess([Roles.ADMIN]),
   (req, res, next) => userController.delete(req, res, next),
 );
+
+
+export default userRouter;

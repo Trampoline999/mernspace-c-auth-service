@@ -42,7 +42,7 @@ authRouter.post("/refresh", validateRefresh, (req, res, next) =>
   authController.refresh(req, res, next),
 );
 authRouter.post("/logout", parsedToken, (req, res, next) =>
-  authController(req, res, next),
+  authController.logout(req, res, next),
 );
 
 export default authRouter;

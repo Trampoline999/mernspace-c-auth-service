@@ -79,7 +79,7 @@ export class AuthController {
       }
 
       //check if email exists in database
-      const user = await this.userService.findByEmail({
+      const user = await this.userService.findByEmailWithPassword({
         email,
       });
 

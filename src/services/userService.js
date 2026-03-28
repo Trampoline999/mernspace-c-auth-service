@@ -37,6 +37,14 @@ export class UserService {
   }
 
   async findByEmail({ email }) {
+    return this.userRepository.findOne({
+      where:{
+        email
+      }
+    })
+  }
+
+  async findByEmailWithPassword({ email }) {
     return this.userRepository
       .createQueryBuilder("user")
       .addSelect("user.password") // brings back the select:false field
