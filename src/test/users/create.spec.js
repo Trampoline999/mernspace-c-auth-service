@@ -79,7 +79,7 @@ describe("/users", () => {
     let accessToken = await jwksMock.token(
       {
         sub: String(user.id),
-        role: Roles.MANAGER,
+        role: Roles.ADMIN,
       },
       { issuer: "auth-service" },
     );

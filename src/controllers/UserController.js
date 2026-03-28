@@ -12,13 +12,14 @@ export class UserController {
   }
   async create(req, res, next) {
     try {
-      const { firstName, lastName, email, password } = req.body;
+      const { firstName, lastName, email, password,tenantId,role } = req.body;
       const user = await this.userService.create({
         firstName,
         lastName,
         email,
         password,
-        role: Roles.MANAGER,
+        role,
+        tenantId,
       });
       res.status(201).json({ id: user.id });
     } catch (err) {

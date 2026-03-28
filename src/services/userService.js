@@ -4,7 +4,7 @@ export class UserService {
   constructor(userRepository) {
     this.userRepository = userRepository;
   }
-  async create({ firstName, lastName, email, password, role }) {
+  async create({ firstName, lastName, email, password, role ,tenantId}) {
     try {
       const user = await this.userRepository.findOne({
         where: { email: email },
@@ -23,6 +23,7 @@ export class UserService {
         email,
         password: hashedPassword,
         role,
+        tenantId: tenantId!== undefined ? tenantId :undefined
       });
     } catch (err) {
       if (err.status === 400) {
