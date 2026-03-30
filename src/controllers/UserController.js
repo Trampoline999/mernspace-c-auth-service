@@ -1,5 +1,4 @@
 import createHttpError from "http-errors";
-import { Roles } from "../constants";
 import { validationResult } from "express-validator";
 
 export class UserController {

@@ -23,7 +23,7 @@ export class UserService {
         email,
         password: hashedPassword,
         role,
-        tenantId: tenantId!== undefined ? tenantId :undefined
+        tenantId: tenantId !== undefined ? tenantId :undefined
       });
     } catch (err) {
       if (err.status === 400) {
