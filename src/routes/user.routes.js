@@ -16,7 +16,7 @@ userRouter.post("/", authenticate, canAccess([Roles.ADMIN]), (req, res, next) =>
   userController.create(req, res, next),
 );
 userRouter.get("/", authenticate, canAccess([Roles.ADMIN]), (req, res, next) =>
-  userController.getAllUser(req, res, next),
+  userController.getAllUsers(req, res, next),
 );
 userRouter.get("/:id", authenticate, (req, res, next) =>
   userController.getUser(req, res, next),

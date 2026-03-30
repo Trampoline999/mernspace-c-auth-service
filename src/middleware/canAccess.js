@@ -1,16 +1,22 @@
 import createHttpError from "http-errors";
 
-export const canAccess = (Roles = []) => {
+//check for admin role 
+export const canAccess = (allowedRoles = []) => {
   return (req, res, next) => {
-    const roleFromToken = req.auth.role;
-    if (!Roles.includes(roleFromToken)) {
-      const err = createHttpError(
+    // Extract the user's role from the authenticated token
+    const userRole = req.auth?.role;
+
+    // Check if user's role is authorized to access this route
+    if (!allowedRoles.includes(userRole)) {
+      // User doesn't have required role - deny access
+      const error = createHttpError(
         403,
-        "you don't have permisson to access this",
+        "Access denied. You do not have permission to access this resource."
       );
-      next(err);
-      return;
+      return next(error);
     }
+
+    // User has required role - proceed to next middleware
     next();
   };
 };
