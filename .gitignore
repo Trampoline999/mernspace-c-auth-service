@@ -24,5 +24,5 @@ certs/public.pem
 #logs
 logs/
 
-#qoder
-/.qoder
+#remove qoder directory from git
+/qoder/

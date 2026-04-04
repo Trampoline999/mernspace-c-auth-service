@@ -36,7 +36,7 @@
 This document provides comprehensive API documentation for the Authentication Service. It covers:
 - Authentication endpoints: registration, login, token refresh, logout, and self-profile retrieval
 - Tenant management endpoints: listing, creating, retrieving, updating, and deleting tenants
-- User management endpoints: listing, creating, retrieving, updating, and deleting users
+- User management endpoints: listing, creating, retrieving, updating, and deleting users with tenant-aware operations
 - Request/response schemas, authentication requirements, headers, cookies, error codes, and practical curl examples
 - Rate limiting, pagination/filtering, and API versioning considerations
 
@@ -73,11 +73,11 @@ G --> J
 ## Core Components
 - Authentication controller handles registration, login, refresh, logout, and self-profile retrieval
 - Tenant controller manages tenant creation, listing, retrieval, updates, and deletion
-- User controller manages user creation, listing, retrieval, updates, and deletion
+- User controller manages user creation, listing, retrieval, updates, and deletion with tenant awareness
 - Middleware enforces JWT-based authentication and role-based access control
 - Validators enforce request schemas for registration and login
 - Services encapsulate persistence logic for users and tenants
-- Entities define the data model for users and tenants
+- Entities define the data model for users and tenants with multi-tenant support
 
 **Section sources**
 - [src/controllers/AuthController.js:5-16](file://src/controllers/AuthController.js#L5-L16)
@@ -188,7 +188,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
 - [src/controllers/AuthController.js:72-136](file://src/controllers/AuthController.js#L72-L136)
 
 #### GET /auth/self
-- Description: Retrieves the authenticated user’s profile
+- Description: Retrieves the authenticated user's profile
 - Authentication: Required (JWT via Authorization header or accessToken cookie)
 - Request headers:
   - Authorization: Bearer <access_token>
@@ -282,7 +282,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
 - [src/controllers/TenantController.js:11-22](file://src/controllers/TenantController.js#L11-L22)
 - [src/services/TenantService.js:7-14](file://src/services/TenantService.js#L7-L14)
 
-#### GET /tenants/tenants/:id
+#### GET /tenants/:id
 - Description: Retrieves a tenant by ID
 - Authentication: Not required
 - Path parameters:
@@ -292,14 +292,14 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
   - 404 Not Found: Tenant not found
   - 500 Internal Server Error: Generic error
 - curl example:
-  - curl https://localhost:8080/tenants/tenants/1
+  - curl https://localhost:8080/tenants/1
 
 **Section sources**
 - [src/routes/tenant.routes.js:26-28](file://src/routes/tenant.routes.js#L26-L28)
 - [src/controllers/TenantController.js:34-48](file://src/controllers/TenantController.js#L34-L48)
 - [src/services/TenantService.js:25-32](file://src/services/TenantService.js#L25-L32)
 
-#### POST /tenants/tenants/:id
+#### POST /tenants/:id
 - Description: Updates a tenant by ID
 - Authentication: Required (JWT)
 - Authorization: Role-based access control (ADMIN required)
@@ -316,7 +316,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
   - 403 Forbidden: Access denied if not ADMIN
   - 500 Internal Server Error: Generic error
 - curl example:
-  - curl -X POST https://localhost:8080/tenants/tenants/1 -H "Authorization: Bearer YOUR_ACCESS_TOKEN" -H "Content-Type: application/json" -d '{"name":"Updated Corp"}'
+  - curl -X POST https://localhost:8080/tenants/1 -H "Authorization: Bearer YOUR_ACCESS_TOKEN" -H "Content-Type: application/json" -d '{"name":"Updated Corp"}'
 
 **Section sources**
 - [src/routes/tenant.routes.js:30-35](file://src/routes/tenant.routes.js#L30-L35)
@@ -325,7 +325,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
 - [src/controllers/TenantController.js:50-63](file://src/controllers/TenantController.js#L50-L63)
 - [src/services/TenantService.js:34-50](file://src/services/TenantService.js#L34-L50)
 
-#### DELETE /tenants/tenants/:id
+#### DELETE /tenants/:id
 - Description: Deletes a tenant by ID
 - Authentication: Required (JWT)
 - Authorization: Role-based access control (ADMIN required)
@@ -336,7 +336,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
   - 403 Forbidden: Access denied if not ADMIN
   - 500 Internal Server Error: Generic error
 - curl example:
-  - curl -X DELETE https://localhost:8080/tenants/tenants/1 -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+  - curl -X DELETE https://localhost:8080/tenants/1 -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
 **Section sources**
 - [src/routes/tenant.routes.js:37-42](file://src/routes/tenant.routes.js#L37-L42)
@@ -367,7 +367,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
 - [src/services/UserService.js:64-66](file://src/services/UserService.js#L64-L66)
 
 #### POST /users/
-- Description: Creates a new user
+- Description: Creates a new user with tenant awareness
 - Authentication: Required (JWT)
 - Authorization: Role-based access control (ADMIN required)
 - Request headers:
@@ -386,6 +386,8 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
   - 500 Internal Server Error: Generic error
 - curl example:
   - curl -X POST https://localhost:8080/users/ -H "Authorization: Bearer YOUR_ACCESS_TOKEN" -H "Content-Type: application/json" -d '{"firstName":"Jane","lastName":"Smith","email":"jane@example.com","password":"anotherPass456","role":"customer","tenantId":1}'
+
+**Updated** Added tenantId parameter for multi-tenant support
 
 **Section sources**
 - [src/routes/user.routes.js:15-17](file://src/routes/user.routes.js#L15-L17)
@@ -412,7 +414,7 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
 - [src/services/UserService.js:56-62](file://src/services/UserService.js#L56-L62)
 
 #### PATCH /users/:id
-- Description: Updates a user by ID
+- Description: Updates a user by ID with tenant awareness
 - Authentication: Required (JWT)
 - Authorization: Role-based access control (ADMIN required)
 - Path parameters:
@@ -433,6 +435,8 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
   - 500 Internal Server Error: Generic error
 - curl example:
   - curl -X PATCH https://localhost:8080/users/1 -H "Authorization: Bearer YOUR_ACCESS_TOKEN" -H "Content-Type: application/json" -d '{"role":"admin"}'
+
+**Updated** Added tenantId parameter for multi-tenant support
 
 **Section sources**
 - [src/routes/user.routes.js:24-29](file://src/routes/user.routes.js#L24-L29)
@@ -472,10 +476,12 @@ AuthCtrl-->>Client : 200 JSON {id}, Set-Cookie accessToken, refreshToken
   - email: string (unique)
   - password: string (not selectable in queries)
   - role: string
-  - tenantId: integer (nullable)
+  - tenantId: integer (nullable, foreign key to Tenant)
 - Relations:
   - One-to-many with RefreshToken via refreshTokens
-  - Many-to-one with Tenant via tenantId
+  - Many-to-one with Tenant via tenantId (nullable)
+
+**Updated** Added tenantId field for multi-tenant support
 
 **Section sources**
 - [src/entity/User.js:3-49](file://src/entity/User.js#L3-L49)
@@ -539,6 +545,7 @@ CA --> ROLES["constants/index.js"]
 - Password hashing uses bcrypt; tune salt rounds for desired security/performance balance
 - Use pagination and filtering for large datasets (users/tenants) when extending endpoints
 - Consider connection pooling and caching for frequent reads
+- Multi-tenant queries may benefit from indexing on tenantId fields
 
 ## Troubleshooting Guide
 - Authentication failures:
@@ -550,6 +557,9 @@ CA --> ROLES["constants/index.js"]
   - Check request body against validator rules for registration and login
 - Database errors:
   - Inspect service-level error propagation and logging
+- Multi-tenant issues:
+  - Verify tenantId values correspond to existing tenants
+  - Ensure users are assigned to appropriate tenant contexts
 
 **Section sources**
 - [src/middleware/authenticate.js:6-25](file://src/middleware/authenticate.js#L6-L25)
@@ -559,7 +569,7 @@ CA --> ROLES["constants/index.js"]
 - [src/app.js:24-37](file://src/app.js#L24-L37)
 
 ## Conclusion
-This API provides robust authentication and tenant/user management capabilities with clear separation of concerns, middleware-driven security, and explicit request/response schemas. Extend endpoints with pagination and filtering as your application grows, and maintain strict adherence to role-based access control for administrative operations.
+This API provides robust authentication and tenant/user management capabilities with clear separation of concerns, middleware-driven security, and explicit request/response schemas. The enhanced multi-tenant functionality allows users to be associated with specific tenants through the tenantId field, enabling comprehensive tenant-aware operations across all user management endpoints. Extend endpoints with pagination and filtering as your application grows, and maintain strict adherence to role-based access control for administrative operations.
 
 ## Appendices
 
@@ -585,12 +595,12 @@ This API provides robust authentication and tenant/user management capabilities 
   - POST /tenants/
     - Request: { name, address }
     - Response: 201 { id }
-  - GET /tenants/tenants/:id
+  - GET /tenants/:id
     - Response: 200 { id }
-  - POST /tenants/tenants/:id
+  - POST /tenants/:id
     - Request: { name?, address? }
     - Response: 200 { id }
-  - DELETE /tenants/tenants/:id
+  - DELETE /tenants/:id
     - Response: 200 {}
 
 - Users
@@ -625,3 +635,9 @@ This API provides robust authentication and tenant/user management capabilities 
 - Rate limiting: Enabled for JWKS retrieval in authentication middleware
 - Pagination/Filtering: Not implemented in current routes; add query parameters as needed
 - Versioning: Not implemented; consider path-based versioning (/v1/auth, /v1/users)
+- Multi-tenant support: Users can be associated with tenants via tenantId field in user operations
+
+### Multi-Tenant Usage Examples
+- Create user in specific tenant: `{"firstName":"John","lastName":"Doe","email":"john@acme.com","password":"securePass123","role":"customer","tenantId":1}`
+- Update user's tenant assignment: `{"tenantId":2}`
+- Query users by tenant: Add tenantId parameter to user listing endpoints

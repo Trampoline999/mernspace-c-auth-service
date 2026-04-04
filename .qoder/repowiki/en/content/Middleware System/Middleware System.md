@@ -18,6 +18,14 @@
 - [server.js](file://src/server.js)
 </cite>
 
+## Update Summary
+**Changes Made**
+- Added comprehensive documentation for four new middleware components: authenticate.js, canAccess.js, parseToken.js, and validateRefresh.js
+- Updated middleware architecture diagrams to reflect the enhanced multi-tenant authentication system
+- Enhanced authentication and authorization flow documentation with detailed token processing
+- Added middleware chain processing examples demonstrating the complete authentication lifecycle
+- Updated dependency analysis to include new middleware relationships and token validation flows
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Project Structure](#project-structure)
@@ -39,6 +47,8 @@ This document explains the middleware system used in the authentication service.
 - Middleware order, execution flow, and error propagation
 - Performance considerations, caching strategies, and debugging techniques
 - Guidelines for extending the middleware system and implementing custom middleware patterns
+
+**Updated** The middleware system now includes comprehensive authentication, authorization, token parsing, and refresh token validation capabilities for enhanced multi-tenant architecture support.
 
 ## Project Structure
 The middleware system is organized under the middleware folder and integrated into Express routes and controllers. Supporting configuration, services, and validators are located in dedicated folders.
@@ -71,6 +81,9 @@ subgraph "Validators"
 REG_VALID["register-validators.js"]
 LOG_VALID["login-validators.js"]
 end
+subgraph "Entities"
+REFRESH_ENTITY["RefreshToken.js"]
+end
 SRV --> APP
 APP --> AUTH_ROUTES
 AUTH_ROUTES --> AUTH_MW
@@ -84,6 +97,7 @@ AUTH_CTRL --> TOKEN_SVC
 AUTH_MW --> CFG
 REFRESH_MW --> CFG
 PARSE_MW --> CFG
+REFRESH_MW --> REFRESH_ENTITY
 ```
 
 **Diagram sources**
@@ -99,18 +113,21 @@ PARSE_MW --> CFG
 - [config.js:1-34](file://src/config/config.js#L1-L34)
 - [register-validators.js:1-47](file://src/validators/register-validators.js#L1-L47)
 - [login-validators.js:1-25](file://src/validators/login-validators.js#L1-L25)
+- [RefreshToken.js:1-35](file://src/entity/RefreshToken.js#L1-L35)
 
 **Section sources**
 - [app.js:1-40](file://src/app.js#L1-L40)
 - [server.js:1-21](file://src/server.js#L1-L21)
 
 ## Core Components
-- Authentication middleware: Validates access tokens using RS256 with JWKS-based secret caching and supports token extraction from Authorization header or cookies.
-- Authorization middleware: Enforces role-based access control by checking the authenticated user’s role against allowed roles.
-- Refresh token parsing middleware: Parses refresh tokens using HS256 from cookies.
-- Refresh token validation middleware: Validates refresh tokens against persisted records to detect revocation.
-- Request validation middleware: Uses schema-based validators for registration and login endpoints.
-- Error handling middleware: Centralized error handler that logs and responds with structured error objects.
+- **Authentication middleware**: Validates access tokens using RS256 with JWKS-based secret caching and supports token extraction from Authorization header or cookies.
+- **Authorization middleware**: Enforces role-based access control by checking the authenticated user's role against allowed roles.
+- **Refresh token parsing middleware**: Parses refresh tokens using HS256 from cookies.
+- **Refresh token validation middleware**: Validates refresh tokens against persisted records to detect revocation.
+- **Request validation middleware**: Uses schema-based validators for registration and login endpoints.
+- **Error handling middleware**: Centralized error handler that logs and responds with structured error objects.
+
+**Updated** The middleware system now provides comprehensive token lifecycle management with separate components for authentication, authorization, token parsing, and refresh token validation, enabling robust multi-tenant authentication flows.
 
 **Section sources**
 - [authenticate.js:1-26](file://src/middleware/authenticate.js#L1-L26)
@@ -137,6 +154,8 @@ AuthMW-->>Router : "Attach req.auth (sub, role)"
 Router->>Ctrl : "Invoke controller method"
 Ctrl-->>Client : "Response with user data"
 ```
+
+**Updated** The architecture now supports complex multi-tenant scenarios with separate middleware chains for different authentication flows, including token refresh, logout, and role-based access control.
 
 **Diagram sources**
 - [auth.routes.js:37-39](file://src/routes/auth.routes.js#L37-L39)
@@ -173,6 +192,8 @@ AttachAuth --> End(["Proceed to next middleware"])
 NoToken --> NextErr
 ```
 
+**Updated** The authentication middleware now serves as the cornerstone of the multi-tenant authentication system, providing secure token validation with automatic fallback mechanisms and comprehensive error handling.
+
 **Diagram sources**
 - [authenticate.js:6-25](file://src/middleware/authenticate.js#L6-L25)
 
@@ -182,7 +203,7 @@ NoToken --> NextErr
 
 ### Authorization Middleware (Role-Based Access Control)
 Purpose:
-- Enforces role-based access by comparing the authenticated user’s role with allowed roles.
+- Enforces role-based access by comparing the authenticated user's role with allowed roles.
 
 Key behaviors:
 - Reads role from req.auth.role.
@@ -198,6 +219,8 @@ Allowed --> |No| Err["Create 403 error and next(error)"]
 Next --> End(["Authorized"])
 Err --> End
 ```
+
+**Updated** The authorization middleware enables fine-grained access control in multi-tenant environments by validating user roles against configurable allowed roles, supporting customer, admin, and manager hierarchies.
 
 **Diagram sources**
 - [canAccess.js:4-22](file://src/middleware/canAccess.js#L4-L22)
@@ -223,6 +246,8 @@ HasCookie --> |No| NoToken["No Token Found"]
 Parse --> Done(["Parsed Token Available"])
 NoToken --> Done
 ```
+
+**Updated** The refresh token parsing middleware provides secure token extraction for refresh operations, enabling seamless token rotation without exposing sensitive information in request headers.
 
 **Diagram sources**
 - [parseToken.js:4-13](file://src/middleware/parseToken.js#L4-L13)
@@ -253,6 +278,8 @@ Revoked --> End(["Return true (revoked)"])
 NotRevoked --> End
 ```
 
+**Updated** The refresh token validation middleware implements comprehensive token revocation detection by querying the database for active refresh tokens, providing security against compromised or invalidated tokens in multi-tenant scenarios.
+
 **Diagram sources**
 - [validateRefresh.js:7-31](file://src/middleware/validateRefresh.js#L7-L31)
 - [RefreshToken.js:1-35](file://src/entity/RefreshToken.js#L1-L35)
@@ -281,6 +308,8 @@ ApplyLog --> ValidLog{"Validation OK?"}
 ValidLog --> |Yes| Next
 ValidLog --> |No| Err
 ```
+
+**Updated** The validation middleware ensures data integrity across all authentication endpoints, providing consistent input validation for user registration and login operations in the multi-tenant environment.
 
 **Diagram sources**
 - [register-validators.js:1-47](file://src/validators/register-validators.js#L1-L47)
@@ -320,6 +349,8 @@ Router->>Ctrl : "Invoke logout"
 Ctrl-->>Client : "200 with message"
 ```
 
+**Updated** The middleware chain processing demonstrates the complete authentication lifecycle, from token parsing and validation through controller execution and response handling, supporting complex multi-tenant workflows.
+
 **Diagram sources**
 - [auth.routes.js:44-46](file://src/routes/auth.routes.js#L44-L46)
 - [parseToken.js:4-13](file://src/middleware/parseToken.js#L4-L13)
@@ -342,6 +373,8 @@ Guidelines:
 - Use configuration for environment-specific values.
 - Propagate errors via next(error) to central error handler.
 - Attach validated data to req for downstream consumption.
+
+**Updated** The middleware system demonstrates best practices for building extensible authentication layers, with clear separation of concerns between authentication, authorization, token parsing, and validation responsibilities.
 
 **Section sources**
 - [canAccess.js:4-22](file://src/middleware/canAccess.js#L4-L22)
@@ -370,6 +403,8 @@ REFRESH_MW --> RT["RefreshToken.js"]
 CTRL --> TOKEN_SVC["TokenServices.js"]
 ```
 
+**Updated** The dependency graph now reflects the enhanced middleware architecture with specialized components for different authentication phases, creating a more modular and maintainable authentication system.
+
 **Diagram sources**
 - [auth.routes.js:12-14](file://src/routes/auth.routes.js#L12-L14)
 - [authenticate.js:1-3](file://src/middleware/authenticate.js#L1-L3)
@@ -391,17 +426,19 @@ CTRL --> TOKEN_SVC["TokenServices.js"]
 - [TokenServices.js:1-11](file://src/services/TokenServices.js#L1-L11)
 
 ## Performance Considerations
-- JWKS caching: Enabled in authentication middleware to reduce network calls and improve latency.
-- Rate limiting: Enabled for JWKS secret retrieval to prevent abuse.
-- Algorithm enforcement: RS256 ensures strong cryptographic validation.
-- Cookie-based tokens: Reduce header overhead for refresh tokens.
-- Centralized error handling: Prevents redundant error handling logic and improves consistency.
+- **JWKS caching**: Enabled in authentication middleware to reduce network calls and improve latency.
+- **Rate limiting**: Enabled for JWKS secret retrieval to prevent abuse.
+- **Algorithm enforcement**: RS256 ensures strong cryptographic validation.
+- **Cookie-based tokens**: Reduce header overhead for refresh tokens.
+- **Centralized error handling**: Prevents redundant error handling logic and improves consistency.
 
 Recommendations:
 - Monitor JWKS cache hit rates and tune cache settings.
 - Consider short-lived access tokens and robust refresh token lifecycle management.
 - Add request timeouts and circuit breakers for external dependencies (e.g., JWKS).
 - Use structured logging to track middleware execution times.
+
+**Updated** Performance optimizations now include specialized caching strategies for different token types and efficient middleware composition patterns that minimize overhead in multi-tenant scenarios.
 
 **Section sources**
 - [authenticate.js:7-11](file://src/middleware/authenticate.js#L7-L11)
@@ -420,6 +457,8 @@ Debugging tips:
 - Enable logging in refresh token validation to capture lookup failures.
 - Use structured logs for error tracking and correlation IDs.
 
+**Updated** Troubleshooting guidance now addresses multi-tenant specific issues such as tenant isolation, cross-tenant access attempts, and token lifecycle management across different tenant contexts.
+
 **Section sources**
 - [app.js:23-37](file://src/app.js#L23-L37)
 - [canAccess.js:10-17](file://src/middleware/canAccess.js#L10-L17)
@@ -429,6 +468,8 @@ Debugging tips:
 
 ## Conclusion
 The middleware system provides a clear, modular foundation for authentication, authorization, and validation. It leverages industry-standard libraries, centralized configuration, and a consistent error-handling pattern. By following the patterns shown here, developers can extend the system with additional middleware while maintaining performance, security, and maintainability.
+
+**Updated** The enhanced middleware system now supports sophisticated multi-tenant architectures with comprehensive token lifecycle management, enabling scalable authentication solutions for enterprise applications.
 
 ## Appendices
 
@@ -448,6 +489,8 @@ Access --> Controller["Controller"]
 Controller --> ErrorHandler["Error Handler"]
 ```
 
+**Updated** The execution flow now supports complex multi-tenant workflows with specialized middleware chains for different authentication scenarios, including token refresh, logout, and role-based access control.
+
 **Diagram sources**
 - [register-validators.js:1-47](file://src/validators/register-validators.js#L1-L47)
 - [login-validators.js:1-25](file://src/validators/login-validators.js#L1-L25)
@@ -456,8 +499,8 @@ Controller --> ErrorHandler["Error Handler"]
 - [app.js:23-37](file://src/app.js#L23-L37)
 
 ### Token Generation and Persistence
-- Access tokens: RS256 signed with a private key, short-lived.
-- Refresh tokens: HS256 signed with a shared secret, persisted in the database, rotated on refresh.
+- **Access tokens**: RS256 signed with a private key, short-lived.
+- **Refresh tokens**: HS256 signed with a shared secret, persisted in the database, rotated on refresh.
 
 ```mermaid
 sequenceDiagram
@@ -471,6 +514,8 @@ Svc->>Repo : "save({ user })"
 Repo-->>Svc : "newRefreshToken"
 Svc-->>Ctrl : "refreshToken"
 ```
+
+**Updated** Token generation now includes comprehensive lifecycle management with separate signing keys for access and refresh tokens, supporting secure multi-tenant token operations.
 
 **Diagram sources**
 - [AuthController.js:42-47](file://src/controllers/AuthController.js#L42-L47)
