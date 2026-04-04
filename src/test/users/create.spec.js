@@ -28,11 +28,11 @@ describe("/users", () => {
     password: "secret@123",
   };
 
-  const getUsers = async (adminToken) => {
+  const getUsers = async (registerData,adminToken) => {
     return await request(app)
-      .get("/users")
+      .post("/users")
       .set("Cookie", [`accessToken=${adminToken}`])
-      .send();
+      .send(registerData);
   };
 
   beforeAll(async () => {
@@ -84,7 +84,7 @@ describe("/users", () => {
       { issuer: "auth-service" },
     );
 
-    await getUsers(accessToken);
+    await getUsers(registerData,accessToken);
 
     const users = await userRepository.find({});
     expect(users).toHaveLength(1);
