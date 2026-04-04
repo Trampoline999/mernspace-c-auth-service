@@ -25,4 +25,4 @@ certs/public.pem
 logs/
 
 #remove .qoder directory from git
-.qoder/
+/.qoder/

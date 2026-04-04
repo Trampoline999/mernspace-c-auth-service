@@ -7,6 +7,7 @@ import logger from "../config/logger.js";
 import { authenticate } from "../middleware/authenticate.js";
 import { canAccess } from "../middleware/canAccess.js";
 import { Roles } from "../constants/index.js";
+import { tenantValidators } from "../validators/tenantValidators.js";
 
 const tenantRouter = express.Router();
 const tenantRepository = AppDataSource.getRepository(Tenant);
@@ -17,25 +18,27 @@ tenantRouter.post(
   "/",
   authenticate,
   canAccess([Roles.ADMIN]),
+  tenantValidators,
   (req, res, next) => tenant.create(req, res, next),
 );
 
 tenantRouter.get("/", (req, res, next) =>
   tenant.getAllTenants(req, res, next),
 );
-tenantRouter.get("/tenants/:id", (req, res, next) =>
+tenantRouter.get("/tenants/:id",canAccess([Roles.ADMIN]), (req, res, next) =>
   tenant.getTenant(req, res, next),
 );
 
 tenantRouter.post(
-  "/tenants/:id",
+  "/:id",
   authenticate,
   canAccess([Roles.ADMIN]),
+  tenantValidators,
   (req, res, next) => tenant.updateTenant(req, res, next),
 );
 
 tenantRouter.delete(
-  "/tenants/:id",
+  "/:id",
   authenticate,
   canAccess([Roles.ADMIN]),
   (req, res, next) => tenant.deleteTenant(req, res, next),
