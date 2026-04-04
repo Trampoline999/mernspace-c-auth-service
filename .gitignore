@@ -15,6 +15,7 @@ temp/
 #public
 /public
 
+
 #certs
 certs/
 certs/private.pem
@@ -22,3 +23,6 @@ certs/public.pem
 
 #logs
 logs/
+
+#qoder
+/.qoder
