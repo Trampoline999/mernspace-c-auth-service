@@ -25,4 +25,4 @@ certs/public.pem
 logs/
 
 #qoder
-.qoder
+/.qoder
