@@ -1,6 +1,6 @@
 import express from "express";
 import { AuthController } from "../controllers/AuthController.js";
-import { UserService } from "../services/UserService.js";
+import { UserService } from "../services/userService.js";
 import logger from "../config/logger.js";
 import { AppDataSource } from "../config/data-source.js";
 import { User } from "../entity/User.js";

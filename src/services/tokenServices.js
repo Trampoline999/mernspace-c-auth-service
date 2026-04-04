@@ -1,8 +1,5 @@
 import jwt from "jsonwebtoken";
-import fs from "fs";
-import path from "path";
 import createHttpError from "http-errors";
-import { fileURLToPath } from "url";
 import { Config } from "../config/config.js";
 
 export class TokenService {
@@ -11,12 +8,16 @@ export class TokenService {
   }
   async generateAccessToken(payload) {
     let privatekey;
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
+
+    if(!Config.PRIVATE_KEY_SECRET)
+    {
+      const error = createHttpError(500, "private key is not set!!!");
+      throw error;
+    }
+    
     try {
-      privatekey = fs.readFileSync(
-        path.join(__dirname, "../../certs/private.pem"),
-      );
+        privatekey = Config.PRIVATE_KEY_SECRET ;
+
     } catch {
       const error = createHttpError(500, "error while reading private key");
       throw error;
@@ -32,7 +33,7 @@ export class TokenService {
   }
 
   async generateRefreshToken(payload) {
-    const refreshToken = jwt.sign(payload, Config.PRIVATE_KEY_SECRET, {
+    const refreshToken = jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
       algorithm: "HS256",
       expiresIn: "7d",
       issuer: "auth-service",

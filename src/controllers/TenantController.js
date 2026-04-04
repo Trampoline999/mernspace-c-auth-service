@@ -1,4 +1,5 @@
 import createHttpError from "http-errors";
+import { validationResult } from "express-validator";
 
 export class TenantController {
   tenantService;
@@ -10,7 +11,11 @@ export class TenantController {
 
   async create(req, res, next) {
     const { name, address } = req.body;
-
+    
+    const result = validationResult(req);
+      if (!result.isEmpty()) {
+        return res.status(400).json({ errors: result.array() });
+      }
     try {
       const tenant = await this.tenantService.create({ name, address });
       this.logger.info("tenant has been created.", { id: tenant.id });
@@ -18,7 +23,7 @@ export class TenantController {
     } catch (err) {
       next(err);
       return;
-    }
+    } 
   }
 
   async getAllTenants(req, res, next) {
@@ -50,6 +55,10 @@ export class TenantController {
   async updateTenant(req, res, next) {
     const id = req.params.id;
     const { name, address } = req.body;
+    const result = validationResult(req);
+      if (!result.isEmpty()) {
+        return res.status(400).json({ errors: result.array() });
+      }
     try {
       const tenant = await this.tenantService.updateTenant(Number(id), {
         name,

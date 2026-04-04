@@ -46,16 +46,14 @@ describe("/users", () => {
   });
 
   beforeEach(async () => {
-    jwksMock.start();
     if (connection && connection.isInitialized) {
       await connection.dropDatabase();
-      // console.log("Database dropped successfully.");
+      //  console.log("Database dropped successfully.");
       await connection.synchronize();
       userRepository = connection.getRepository(User);
       tenantRepository = connection.getRepository(Tenant);
-      
-      // await truncateTable(connection);
     }
+    jwksMock.start();
   });
 
   afterEach(() => {
