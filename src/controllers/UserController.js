@@ -80,7 +80,6 @@ export class UserController {
     try {
       const id = req.params.id;
       const user = await this.userService.deleteUser(Number(id));
-
       if (!user) {
         const err = createHttpError(401, "invalid token no user found...");
         next(err);

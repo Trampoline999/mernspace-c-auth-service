@@ -68,7 +68,7 @@ describe("/users", () => {
     }
   });
 
-  it("should return tokens", async () => {
+  it("should return token", async () => {
     const tenant = await tenantRepository.save({ name: "Test Tenant", address: "Test Address" });
     let user = await userRepository.save({
       ...registerData,

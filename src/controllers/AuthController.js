@@ -1,6 +1,6 @@
 import { validationResult } from "express-validator";
 import createHttpError from "http-errors";
-import { Roles } from "../constants";
+import { Roles } from "../constants/index.js";
 
 export class AuthController {
   tokenService;

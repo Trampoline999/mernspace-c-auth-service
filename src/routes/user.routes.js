@@ -1,11 +1,11 @@
 import express from "express";
-import { UserController } from "../controllers/UserController";
-import { AppDataSource } from "../config/data-source";
-import { User } from "../entity/User";
-import { authenticate } from "../middleware/authenticate";
-import { canAccess } from "../middleware/canAccess";
-import { Roles } from "../constants";
-import { UserService } from "../services/UserService";
+import { UserController } from "../controllers/UserController.js";
+import { AppDataSource } from "../config/data-source.js";
+import { User } from "../entity/User.js";
+import { authenticate } from "../middleware/authenticate.js";
+import { canAccess } from "../middleware/canAccess.js";
+import { Roles } from "../constants/index.js";
+import { UserService } from "../services/UserService.js";
 const userRouter = express.Router();
 
 const userRepository = AppDataSource.getRepository(User);

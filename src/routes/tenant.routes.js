@@ -1,8 +1,8 @@
 import express from "express";
-import { TenantController } from "../controllers/tenantController";
-import { TenantService } from "../services/TenantService";
-import { AppDataSource } from "../config/data-source";
-import { Tenant } from "../entity/Tenants";
+import { TenantController } from "../controllers/TenantController.js";
+import { TenantService } from "../services/TenantService.js";
+import { AppDataSource } from "../config/data-source.js";
+import { Tenant } from "../entity/Tenants.js";
 import logger from "../config/logger.js";
 import { authenticate } from "../middleware/authenticate.js";
 import { canAccess } from "../middleware/canAccess.js";
