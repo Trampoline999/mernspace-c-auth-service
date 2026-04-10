@@ -7,6 +7,7 @@ import logger from "../config/logger.js";
 import { authenticate } from "../middleware/authenticate.js";
 import { canAccess } from "../middleware/canAccess.js";
 import { Roles } from "../constants/index.js";
+
 import  tenantValidator  from "../validators/tenant-validator.js";
 
 const tenantRouter = express.Router();
