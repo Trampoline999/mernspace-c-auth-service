@@ -1,4 +1,3 @@
-
 name: CI
 on:
     pull_request:
@@ -8,7 +7,7 @@ on:
         branches:
             - main
 jobs:
-        build-and-test:
+    build-and-test:
         name: Build the project
         runs-on: ubuntu-latest
         # if: github.event_name == 'pull_request'
@@ -29,7 +28,7 @@ jobs:
                   REFRESH_TOKEN_SECRET: ${{ secrets.REFRESH_TOKEN_SECRET }}
                   JWKS_URI: ${{ secrets.JWKS_URI }}
                   PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        
+
             - name: SonarCloud Scan
               uses: SonarSource/sonarcloud-github-action@master
               env:
@@ -38,7 +37,7 @@ jobs:
 
     build-and-push-docker:
         name: Build and Push Docker Image
-         needs: build-and-test
+        needs: build-and-test
         runs-on: ubuntu-latest
         env:
             IMAGE_NAME: onkarchougule/mernspace-c-auth-service # onkarchougule/mernstack_auth_service:build-2
