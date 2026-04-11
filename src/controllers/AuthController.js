@@ -3,10 +3,6 @@ import createHttpError from "http-errors";
 import { Roles } from "../constants/index.js";
 
 export class AuthController {
-  tokenService;
-  userService;
-  logger;
-  credentialService;
 
   constructor({ userService, logger, tokenService, credentialService }) {
     this.tokenService = tokenService;
