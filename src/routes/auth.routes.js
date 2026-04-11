@@ -8,7 +8,7 @@ import registerValidators from "../validators/register-validators.js";
 import loginValidators from "../validators/login-validators.js";
 import { TokenService } from "../services/tokenServices.js";
 import { RefreshToken } from "../entity/RefreshToken.js";
-import { CredentialService } from "../services/CredentialService.js";
+import { CredentialService } from "../services/credentialService.js";
 import { authenticate } from "../middleware/authenticate.js";
 import validateRefresh from "../middleware/validateRefresh.js";
 import parsedToken from "../middleware/parseToken.js";
