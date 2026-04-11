@@ -26,7 +26,7 @@ describe("POST /tenants", () => {
   };
 
   const createTenant = async (tenantData = {}, accessToken) => {
-    return request(app)
+    return await request(app)
       .post("/tenants")
       .set("Cookie", [`accessToken=${accessToken}`])
       .send(tenantData);

@@ -49,7 +49,7 @@ describe("/auth/self", () => {
       await connection.dropDatabase();
       // console.log("Database dropped successfully.");
       await connection.synchronize();
-      userRepository = connection.getRepository(User); // getting userRepo here only when a new empty clean database is created
+      userRepository = await connection.getRepository(User); // getting userRepo here only when a new empty clean database is created
       // await truncateTable(connection);
     }
   });

@@ -41,6 +41,8 @@ const config = {
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
   testEnvironment: "node",
+  // DB + TypeORM init often exceeds Jest's default 5000ms for hooks/tests
+  testTimeout: 30000,
   transform: {},
 
   // A list of reporter names that Jest uses when writing coverage reports
