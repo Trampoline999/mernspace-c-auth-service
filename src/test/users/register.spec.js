@@ -25,8 +25,8 @@ describe("POST /auth/register", () => {
     password: "secret@123",
   };
 
-  const registerUser = (userData) => {
-    return request(app).post("/auth/register").send(userData);
+  const registerUser = async (userData) => {
+    return await request(app).post("/auth/register").send(userData);
   };
   beforeAll(async () => {
     try {
