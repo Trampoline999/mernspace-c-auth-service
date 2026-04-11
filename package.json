@@ -15,6 +15,9 @@
   },
   "author": "onkar chougule",
   "license": "ISC",
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@jest/globals": "^30.2.0",
