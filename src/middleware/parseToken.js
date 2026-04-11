@@ -2,7 +2,7 @@ import { expressjwt } from "express-jwt";
 import { Config } from "../config/config.js";
 
 const parsedToken = expressjwt({
-  secret: Config.PRIVATE_KEY_SECRET,
+  secret: Config.REFRESH_TOKEN_SECRET,
   algorithms: ["HS256"],
   getToken(req) {
     const { refreshToken } = req.cookies;

@@ -5,8 +5,8 @@ import { RefreshToken } from "../entity/RefreshToken.js";
 import logger from "../config/logger.js";
 
 const validateRefresh = expressjwt({
-  secret: Config.PRIVATE_KEY_SECRET,
-  algorithms: ["HS256"],
+  secret: Config.REFRESH_TOKEN_SECRET,
+  algorithms: ['HS256'],
   getToken(req) {
     const { refreshToken } = req.cookies;
     return refreshToken;

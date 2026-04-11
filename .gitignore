@@ -26,3 +26,6 @@ logs/
 
 #remove .qoder directory from git
 /.qoder/
+
+#remove coverage
+coverage/

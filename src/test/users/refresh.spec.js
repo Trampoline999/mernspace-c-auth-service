@@ -84,7 +84,7 @@ describe("/auth/refresh", () => {
       id: String(newRefreshtoken.id),
     };
 
-    const token = jwt.sign(payload, Config.PRIVATE_KEY_SECRET, {
+    const token = jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
       algorithm: "HS256",
       expiresIn: "7d",
       issuer: "auth-service",
