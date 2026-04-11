@@ -9,14 +9,14 @@ export class TokenService {
   async generateAccessToken(payload) {
     let privatekey;
 
-    if(!Config.PRIVATE_KEY_SECRET)
+    if(!Config.PRIVATE_KEY)
     {
       const error = createHttpError(500, "private key is not set!!!");
       throw error;
     }
     
     try {
-        privatekey = Config.PRIVATE_KEY_SECRET ;
+        privatekey = Config.PRIVATE_KEY ;
 
     } catch {
       const error = createHttpError(500, "error while reading private key");
