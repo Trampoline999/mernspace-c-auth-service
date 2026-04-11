@@ -13,8 +13,7 @@ export const AppDataSource = new DataSource({
   password: Config.DB_PASSWORD,
   database: Config.DB_NAME,
   // don't use this in production...
-  // Tests reset the schema in Jest hooks; keep auto-sync off for NODE_ENV=test.
-  synchronize: Config.NODE_ENV === "dev",
+  synchronize:true,// Config.NODE_ENV == "test" || Config.NODE_ENV == "dev",
   logging: false,
   entities: [User, RefreshToken, Tenant],
   migrations: Config.NODE_ENV === "test" ? [] : ["src/migration/*.js"],
