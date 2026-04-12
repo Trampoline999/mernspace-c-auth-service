@@ -10,7 +10,7 @@ import { AppDataSource } from "../../config/data-source.js";
 import request from "supertest";
 import { User } from "../../entity/User.js";
 import app from "../../app.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 describe("/auth/login", () => {
   let connection;
