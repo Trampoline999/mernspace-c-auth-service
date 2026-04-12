@@ -51,9 +51,8 @@ describe("/auth/refresh", () => {
       if (connection && connection.isInitialized) {
         await connection.dropDatabase();
         await connection.synchronize();
-        truncateTable(connection);
-        userRepository = connection.getRepository(User);
-        refreshTokenRepository = connection.getRepository(RefreshToken);
+        userRepository = await connection.getRepository(User);
+        refreshTokenRepository = await connection.getRepository(RefreshToken);
       }
     } catch (error) {
       console.error(
