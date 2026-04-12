@@ -39,7 +39,7 @@ export const User = new EntitySchema({
       target: "RefreshToken",
       inverseSide: "user",
     },
-    user: {
+    tenant: {
       type: "many-to-one",
       target: "Tenant",
       joinColumn: { name: "tenantId" },
