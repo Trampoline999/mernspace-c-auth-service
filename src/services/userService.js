@@ -1,5 +1,5 @@
 import createHttpError from "http-errors";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 export class UserService {
   constructor(userRepository) {
     this.userRepository = userRepository;
