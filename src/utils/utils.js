@@ -3,11 +3,14 @@ import { Buffer } from "buffer";
 //write utility function..
 export const truncateTable = async (connection) => {
   const entities = connection.entityMetadatas;
-
-  for (const entity of entities) {
-    const repository = connection.getRepository(entity.name);
-    await repository.clear();
-  }
+  
+  // Get table names in reverse order to handle FK constraints
+  const tableNames = entities
+    .map((entity) => `"${entity.tableName}"`)
+    .reverse();
+  
+  // Use TRUNCATE with CASCADE to handle FK constraints
+  await connection.query(`TRUNCATE TABLE ${tableNames.join(", ")} CASCADE`);
 };
 
 export const isJwt = (token) => {

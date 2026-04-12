@@ -14,6 +14,7 @@ import { Roles } from "../../constants/index.js";
 import jwt from "jsonwebtoken";
 import { Config } from "../../config/config.js";
 import { RefreshToken } from "../../entity/RefreshToken.js";
+import { truncateTable } from "../../utils/utils.js";
 
 describe("/auth/refresh", () => {
   let userRepository;
@@ -50,6 +51,7 @@ describe("/auth/refresh", () => {
       if (connection && connection.isInitialized) {
         await connection.dropDatabase();
         await connection.synchronize();
+        truncateTable(connection);
         userRepository = connection.getRepository(User);
         refreshTokenRepository = connection.getRepository(RefreshToken);
       }
