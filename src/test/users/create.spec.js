@@ -53,11 +53,11 @@ describe("/users", () => {
       userRepository = connection.getRepository(User);
       tenantRepository = connection.getRepository(Tenant);
     }
-    jwksMock.start();
+    await jwksMock.start();
   });
 
-  afterEach(() => {
-    jwksMock.stop();
+  afterEach(async () => {
+    await jwksMock.stop();
   });
 
   afterAll(async () => {

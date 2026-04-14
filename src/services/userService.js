@@ -1,6 +1,7 @@
 import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
 export class UserService {
+  
   constructor(userRepository) {
     this.userRepository = userRepository;
   }
@@ -39,7 +40,7 @@ export class UserService {
   }
 
   async findByEmail({ email }) {
-    return this.userRepository.findOne({
+    return await this.userRepository.findOne({
       where:{
         email
       }
@@ -47,7 +48,7 @@ export class UserService {
   }
 
   async findByEmailWithPassword({ email }) {
-    return this.userRepository
+    return await this.userRepository
       .createQueryBuilder("user")
       .addSelect("user.password") // brings back the select:false field
       .where("user.email = :email", { email })
@@ -55,7 +56,7 @@ export class UserService {
   }
 
   async findById(id) {
-    return this.userRepository.findOne({
+    return await this.userRepository.findOne({
       where: {
         id,
       },

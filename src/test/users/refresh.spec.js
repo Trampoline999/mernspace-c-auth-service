@@ -7,14 +7,14 @@ import {
   it,
 } from "@jest/globals";
 import { AppDataSource } from "../../config/data-source.js";
-import { User } from "../../entity/User";
+import { User } from "../../entity/User.js";
 import request from "supertest";
-import app from "../../app";
+import app from "../../app.js";
 import { Roles } from "../../constants/index.js";
 import jwt from "jsonwebtoken";
 import { Config } from "../../config/config.js";
 import { RefreshToken } from "../../entity/RefreshToken.js";
-import { truncateTable } from "../../utils/utils.js";
+
 
 describe("/auth/refresh", () => {
   let userRepository;
@@ -27,8 +27,8 @@ describe("/auth/refresh", () => {
     password: "secret@123",
   };
 
-  const refreshToken = (refreshToken) => {
-    return request(app)
+  const refreshToken = async (refreshToken) => {
+    return await request(app)
       .post("/auth/refresh")
       .set("Cookie", [`refreshToken=${refreshToken}`])
       .send();

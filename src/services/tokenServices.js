@@ -6,7 +6,7 @@ export class TokenService {
   constructor(refreshTokenRepository) {
     this.refreshTokenRepository = refreshTokenRepository;
   }
-  async generateAccessToken(payload) {
+   generateAccessToken(payload) {
     let privatekey;
 
     if(!Config.PRIVATE_KEY)
@@ -23,7 +23,7 @@ export class TokenService {
       throw error;
     }
 
-    const accessToken = jwt.sign(payload, privatekey, {
+    const accessToken =  jwt.sign(payload, privatekey, {
       algorithm: "RS256",
       expiresIn: "1hr",
       issuer: "auth-service",
@@ -32,8 +32,8 @@ export class TokenService {
     return accessToken;
   }
 
-  async generateRefreshToken(payload) {
-    const refreshToken = jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
+   generateRefreshToken(payload) {
+    const refreshToken =  jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
       algorithm: "HS256",
       expiresIn: "7d",
       issuer: "auth-service",

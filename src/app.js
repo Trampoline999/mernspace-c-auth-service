@@ -4,9 +4,14 @@ import authRouter from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
 import tenantRouter from "./routes/tenant.routes.js";
 import userRouter from "./routes/user.routes.js";
+import cors from 'cors'
 
 const app = express();
-
+app.use(cors({
+  // todo move to .env file
+  origin:["http://localhost:5173"],
+  credentials:true
+}))
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public", { dotfiles: "allow" }));
