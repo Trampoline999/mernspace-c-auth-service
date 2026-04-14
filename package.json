@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=dev nodemon src/server.js",
     "lint:check": "eslint .",
     "test": "cross-env NODE_ENV=test node  --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --runInBand",
-    "test:watch": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --runInBand",
+    "test:watch": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --runInBand", 
     "migration:generate": "cross-env NODE_ENV=dev typeorm migration:generate src/migration/migration -d src/config/data-source.js --outputJs --esm",
     "migration:run": "cross-env NODE_ENV=dev typeorm migration:run -d src/config/data-source.js",
     "migration:create": "typeorm migration:create src/migration/migration --outputJs --esm"
@@ -42,6 +42,7 @@
     "express-validator": "^7.3.1",
     "jsonwebtoken": "^9.0.3",
     "jwks-rsa": "^3.2.2",
+    "node": "^25.9.0",
     "pg": "^8.18.0",
     "reflect-metadata": "^0.2.2",
     "rsa-pem-to-jwk": "^1.1.3",

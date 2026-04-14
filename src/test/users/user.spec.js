@@ -14,6 +14,7 @@ import { User } from "../../entity/User.js";
 import app from "../../app.js";
 import { Roles } from "../../constants/index.js";
 
+
 describe("/auth/self", () => {
   let connection;
   let jwksMock;

@@ -43,7 +43,9 @@ const config = {
   testEnvironment: "node",
   // DB + TypeORM init often exceeds Jest's default 5000ms for hooks/tests
   testTimeout: 30000,
-  transform: {},
+  transform: {
+    '\\.[jt]sx?$': 'babel-jest',
+  },
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -63,9 +65,9 @@ const config = {
   // errorOnDeprecated: false,
 
   // The default configuration for fake timers
-  // fakeTimers: {
-  //   "enableGlobally": false
-  // },
+  /* fakeTimers: {
+    "enableGlobally": true
+  }, */
 
   // Force coverage collection from ignored files using an array of glob patterns
   // forceCoverageMatch: [],
