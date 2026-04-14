@@ -97,7 +97,7 @@ describe("/auth/self", () => {
     );  
       console.log(accessToken);
     const response = await selfRoute(accessToken);
-    console.log(response.body);
+   // console.log(response.body);
     expect(Number(response.body.id)).toBe(user.id);
   });
 
