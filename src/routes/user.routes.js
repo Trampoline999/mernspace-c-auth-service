@@ -5,7 +5,7 @@ import { User } from "../entity/User.js";
 import { authenticate } from "../middleware/authenticate.js";
 import { canAccess } from "../middleware/canAccess.js";
 import { Roles } from "../constants/index.js";
-import { UserService } from "../services/UserService.js";
+import { UserService } from "../services/userService.js"
 
 const userRouter = express.Router();
 

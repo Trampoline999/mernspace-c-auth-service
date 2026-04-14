@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon src/server.js",
     "lint:check": "eslint .",
-    "test": "cross-env NODE_ENV=test node  --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --runInBand",
+    "test": "cross-env NODE_ENV=test node  --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --no-cache --runInBand",
     "test:watch": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --runInBand",
     "migration:generate": "cross-env NODE_ENV=dev typeorm migration:generate src/migration/migration -d src/config/data-source.js --outputJs --esm",
     "migration:run": "cross-env NODE_ENV=dev typeorm migration:run -d src/config/data-source.js",
