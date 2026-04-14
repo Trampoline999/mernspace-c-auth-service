@@ -44,7 +44,7 @@ describe("/auth/self", () => {
   });
 
   beforeEach(async () => {
-    jwksMock.start();
+    await jwksMock.start();
     if (connection && connection.isInitialized) {
       await connection.dropDatabase();
       // console.log("Database dropped successfully.");
@@ -54,8 +54,8 @@ describe("/auth/self", () => {
     }
   });
 
-  afterEach(() => {
-    jwksMock.stop();
+  afterEach(async () => {
+    await jwksMock.stop();
   });
 
   afterAll(async () => {
@@ -65,18 +65,7 @@ describe("/auth/self", () => {
   });
 
   it("should return 200 status code", async () => {
-    let accessToken = await jwksMock.token(
-      {
-        sub: String(1),
-        role: Roles.CUSTOMER,
-      },
-      { issuer: "auth-service" },
-    );
-    const response = await selfRoute(accessToken);
-    expect(response.status).toBe(200);
-  });
-
-  it("should return tokens", async () => {
+    // Create a user first
     let user = await userRepository.save({
       ...registerData,
       role: Roles.CUSTOMER,
@@ -89,8 +78,27 @@ describe("/auth/self", () => {
       },
       { issuer: "auth-service" },
     );
+    const response = await selfRoute(accessToken);
+    console.log(response.body);
+    expect(response.statusCode).toBe(200);
+  });
 
-    let response = await selfRoute(accessToken);
+  it("should return user details", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    let accessToken = await jwksMock.token(
+      {
+        sub: String(user.id),
+        role: user.role,
+      },
+      { issuer: "auth-service" },
+    );  
+      console.log(accessToken);
+    const response = await selfRoute(accessToken);
+    console.log(response.body);
     expect(Number(response.body.id)).toBe(user.id);
   });
 
@@ -108,7 +116,7 @@ describe("/auth/self", () => {
       { issuer: "auth-service" },
     );
 
-    let response = await selfRoute(accessToken);
+    const response = await selfRoute(accessToken);
     expect(response.body).not.toHaveProperty("password");
   });
 

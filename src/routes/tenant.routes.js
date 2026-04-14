@@ -1,6 +1,6 @@
 import express from "express";
 import { TenantController } from "../controllers/TenantController.js";
-import { TenantService } from "../services/TenantService.js";
+import { TenantService } from "../services/tenantService.js";
 import { AppDataSource } from "../config/data-source.js";
 import { Tenant } from "../entity/Tenants.js";
 import logger from "../config/logger.js";

@@ -14,7 +14,7 @@ import { Roles } from "../../constants/index.js";
 import jwt from "jsonwebtoken";
 import { Config } from "../../config/config.js";
 import { RefreshToken } from "../../entity/RefreshToken.js";
-import { truncateTable } from "../../utils/utils.js";
+
 
 describe("/auth/refresh", () => {
   let userRepository;

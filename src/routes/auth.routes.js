@@ -34,8 +34,8 @@ authRouter.post("/login", loginValidators, (req, res, next) =>
   authController.login(req, res, next),
 );
 
-authRouter.get("/self", authenticate, (req, res) =>
-  authController.self(req, res),
+authRouter.get("/self", authenticate, (req, res, next) =>
+  authController.self(req, res, next),
 );
 
 authRouter.post("/refresh", validateRefresh, (req, res, next) =>

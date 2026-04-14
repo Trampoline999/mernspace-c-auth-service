@@ -43,7 +43,7 @@ describe("POST /tenants", () => {
   });
 
   beforeEach(async () => {
-    jwksMock.start();
+    await jwksMock.start();
     if (connection && connection.isInitialized) {
       await connection.dropDatabase();
       // console.log("Database dropped successfully.");
@@ -51,20 +51,20 @@ describe("POST /tenants", () => {
       tenantRepository = await connection.getRepository(Tenant);
     }
 
-    adminToken = jwksMock.token({
+    adminToken = await jwksMock.token({
       sub: "1",
       role: Roles.ADMIN,
     });
+  });
+
+  afterEach(async () => {
+    await jwksMock.stop();
   });
 
   afterAll(async () => {
     if (connection && connection.isInitialized) {
       await connection.destroy();
     }
-  });
-
-  afterEach(() => {
-    jwksMock.stop();
   });
 
   it("should return 201 status code", async () => {
@@ -91,7 +91,7 @@ describe("POST /tenants", () => {
   });
 
   it("should return 403 if user is not Manager", async () => {
-    const managerToken = jwksMock.token({
+    const managerToken = await jwksMock.token({
       sub: "1",
       role: Roles.MANAGER,
     });
