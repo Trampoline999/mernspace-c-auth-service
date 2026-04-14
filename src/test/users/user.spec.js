@@ -79,7 +79,6 @@ describe("/auth/self", () => {
       { issuer: "auth-service" },
     );
     const response = await selfRoute(accessToken);
-    console.log(response.body);
     expect(response.statusCode).toBe(200);
   });
 

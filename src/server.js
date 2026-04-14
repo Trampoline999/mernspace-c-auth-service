@@ -6,7 +6,7 @@ import { AppDataSource } from "./config/data-source.js";
 
 const StartServer = async () => {
   try {
-    AppDataSource.initialize();
+    await AppDataSource.initialize();
     logger.info("Database connected successfully...");
     const port = Config.PORT || 1337;
     app.listen(port, () => {

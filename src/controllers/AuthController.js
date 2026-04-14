@@ -203,7 +203,7 @@ export class AuthController {
       await this.tokenService.deleteRefreshToken(tokenId);
       this.logger.info("refresh token Deleted successfully");
 
-      console.log("user logged out successfully :", req.auth.sub);
+      this.logger.info("user logged out successfully", { userId: req.auth.sub });
 
       res.clearCookie("accessToken");
       res.clearCookie("refreshToken");
