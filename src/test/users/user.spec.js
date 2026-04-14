@@ -38,6 +38,7 @@ describe("/auth/self", () => {
     try {
       jwksMock = createJWKSMock("http://localhost:3000");
       connection = await AppDataSource.initialize();
+      
     } catch (error) {
       console.error("Error during Data Source initialization:", error);
       throw error; // Fail the test immediately if DB doesn't start

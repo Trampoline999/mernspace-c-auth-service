@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=dev nodemon src/server.js",
     "lint:check": "eslint .",
     "test": "cross-env NODE_ENV=test node  --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --runInBand",
-    "test:watch": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --runInBand", 
+    "test:watch": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache --runInBand",
     "migration:generate": "cross-env NODE_ENV=dev typeorm migration:generate src/migration/migration -d src/config/data-source.js --outputJs --esm",
     "migration:run": "cross-env NODE_ENV=dev typeorm migration:run -d src/config/data-source.js",
     "migration:create": "typeorm migration:create src/migration/migration --outputJs --esm"
@@ -24,7 +24,7 @@
     "eslint": "^9.39.2",
     "globals": "^17.2.0",
     "http-errors": "^2.0.1",
-    "jest": "^30.2.0",
+    "jest": "^30.3.0",
     "lint-staged": "^16.2.7",
     "mock-jwks": "^3.1.0",
     "msw": "^2.12.10",
