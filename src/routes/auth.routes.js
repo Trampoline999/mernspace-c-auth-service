@@ -6,7 +6,7 @@ import { AppDataSource } from "../config/data-source.js";
 import { User } from "../entity/User.js";
 import registerValidators from "../validators/register-validators.js";
 import loginValidators from "../validators/login-validators.js";
-import { TokenService } from "../services/tokenServices.js"
+import { TokenService } from "../services/TokenServices.js"
 import { RefreshToken } from "../entity/RefreshToken.js";
 import { CredentialService } from "../services/credentialService.js";
 import { authenticate } from "../middleware/authenticate.js";
