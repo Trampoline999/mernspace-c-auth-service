@@ -82,6 +82,8 @@ describe("/users", () => {
       { issuer: "auth-service" },
     );
 
+    console.log(accessToken)
+
     await getUsers(registerData,accessToken);
 
     const users = await userRepository.find({});
