@@ -26,7 +26,7 @@ tenantRouter.post(
 tenantRouter.get("/", (req, res, next) =>
   tenant.getAllTenants(req, res, next),
 );
-tenantRouter.get("/tenants/:id",canAccess([Roles.ADMIN]), (req, res, next) =>
+tenantRouter.get("/:id",authenticate,canAccess([Roles.ADMIN]), (req, res, next) =>
   tenant.getTenant(req, res, next),
 );
 
