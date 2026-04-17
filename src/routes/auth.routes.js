@@ -41,7 +41,7 @@ authRouter.get("/self", authenticate, (req, res, next) =>
 authRouter.post("/refresh", validateRefresh, (req, res, next) =>
   authController.refresh(req, res, next),
 );
-authRouter.post("/logout", parsedToken, (req, res, next) =>
+authRouter.get("/logout", parsedToken, (req, res, next) =>
   authController.logout(req, res, next),
 );
 

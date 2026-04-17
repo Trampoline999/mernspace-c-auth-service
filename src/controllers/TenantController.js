@@ -45,7 +45,7 @@ export class TenantController {
         next(err);
         return;
       }
-      res.status(200).json({ id: tenant.id });
+      res.status(200).json({tenant});
     } catch (err) {
       next(err);
       return;
@@ -55,12 +55,13 @@ export class TenantController {
   async updateTenant(req, res, next) {
     const id = req.params.id;
     const { name, address } = req.body;
+
     const result = validationResult(req);
       if (!result.isEmpty()) {
         return res.status(400).json({ errors: result.array() });
       }
     try {
-      const tenant = await this.tenantService.updateTenant(Number(id), {
+      const tenant = await this.tenantService.updateTenantById(Number(id), {
         name,
         address,
       });
@@ -74,7 +75,7 @@ export class TenantController {
   async deleteTenant(req, res, next) {
     const id = req.params.id;
     try {
-      await this.tenantService.getTenantById(Number(id));
+      await this.tenantService.deleteTenantById(Number(id));
       res.status(200).json({});
     } catch (err) {
       next(err);
