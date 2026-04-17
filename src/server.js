@@ -28,7 +28,7 @@ const StartServer = async (req,res) => {
 
 const DefaultAdmin = async (req,res) => {
   try {
-    const userRepository = AppDataSource.getRepository(User);
+    const userRepository = await AppDataSource.getRepository(User);
 
     // Check if admin already exists
     const existingAdmin = await userRepository.findOne({
