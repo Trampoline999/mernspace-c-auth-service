@@ -140,7 +140,7 @@ export class AuthController {
         next(error);
         return;
       }
-      res.status(200).json(user);
+      res.status(200).json({...user});
     } catch (err) {
       next(err);
     }
