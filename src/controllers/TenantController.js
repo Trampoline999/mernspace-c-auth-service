@@ -11,11 +11,11 @@ export class TenantController {
 
   async create(req, res, next) {
     const { name, address } = req.body;
-    
+
     const result = validationResult(req);
-      if (!result.isEmpty()) {
-        return res.status(400).json({ errors: result.array() });
-      }
+    if (!result.isEmpty()) {
+      return res.status(400).json({ errors: result.array() });
+    }
     try {
       const tenant = await this.tenantService.create({ name, address });
       this.logger.info("tenant has been created.", { id: tenant.id });
@@ -23,7 +23,7 @@ export class TenantController {
     } catch (err) {
       next(err);
       return;
-    } 
+    }
   }
 
   async getAllTenants(req, res, next) {
@@ -45,7 +45,7 @@ export class TenantController {
         next(err);
         return;
       }
-      res.status(200).json({tenant});
+      res.status(200).json({ tenant });
     } catch (err) {
       next(err);
       return;
@@ -57,9 +57,9 @@ export class TenantController {
     const { name, address } = req.body;
 
     const result = validationResult(req);
-      if (!result.isEmpty()) {
-        return res.status(400).json({ errors: result.array() });
-      }
+    if (!result.isEmpty()) {
+      return res.status(400).json({ errors: result.array() });
+    }
     try {
       const tenant = await this.tenantService.updateTenantById(Number(id), {
         name,
