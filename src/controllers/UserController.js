@@ -2,8 +2,6 @@ import createHttpError from "http-errors";
 import { validationResult } from "express-validator";
 
 export class UserController {
-  userService;
-  logger;
 
   constructor(userService, logger) {
     this.userService = userService;
@@ -65,11 +63,11 @@ export class UserController {
         lastName,
         email,
         role,
-        tenantId,
+        tenantId
       });
 
-      this.logger.info("user updated successfully");
-      res.status(201).json({ id: updatedUser.id });
+      this.logger.info("User updated successfully", { userId: id });
+      res.status(200).json({ id: updatedUser.id });
     } catch (err) {
       next(err);
       return;

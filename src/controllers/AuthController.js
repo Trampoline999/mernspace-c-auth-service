@@ -29,10 +29,12 @@ export class AuthController {
         password,
         role: Roles.CUSTOMER,
       });
-
+    
+      this.logger.info("User has been registered", { id: user.id });
       const payload = {
         sub: String(user.id),
         role: user.role,
+        tenant: user.tenant ? String(user.tenant.id) : "",
       };
 
       const newRefreshToken = await this.tokenService.persistRefreshToken(user);
