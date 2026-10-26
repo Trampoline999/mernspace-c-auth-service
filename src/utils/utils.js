@@ -13,6 +13,8 @@ export const truncateTable = async (connection) => {
   await connection.query(`TRUNCATE TABLE ${tableNames.join(", ")} CASCADE`);
 };
 
+
+// note : this is used for testing purpose to check if the token is valid
 export const isJwt = (token) => {
   if (token === null) {
     return false;

@@ -29,7 +29,7 @@ export class AuthController {
         password,
         role: Roles.CUSTOMER,
       });
-    
+
       this.logger.info("User has been registered", { id: user.id });
       const payload = {
         sub: String(user.id),
@@ -110,7 +110,7 @@ export class AuthController {
         id: String(newRefreshToken.id),
       });
 
-      // : make cookie options (domain, secure, sameSite) environment-aware
+
       res.cookie("accessToken", accessToken, {
         domain: "localhost",
         httpOnly: true,
@@ -120,9 +120,9 @@ export class AuthController {
 
       res.cookie("refreshToken", refreshToken, {
         domain: "localhost",
-        httpOnly: true, // important
+        httpOnly: true,
         sameSite: "strict",
-        maxAge: 1000 * 60 * 60 * 24 * 7, // set ttl to 7 days
+        maxAge: 1000 * 60 * 60 * 24 * 7,
       });
 
       this.logger.info("user logged succussfully", { id: user.id });
@@ -134,8 +134,8 @@ export class AuthController {
   }
 
   async self(req, res, next) {
-    try { 
-  
+    try {
+
       const user = await this.userService.findById(Number(req.auth.sub));
       if (!user) {
         const error = createHttpError(404, "User not found");
@@ -176,7 +176,7 @@ export class AuthController {
         id: String(newRefreshToken.id),
       });
 
-      // : make cookie options (domain, secure, sameSite) environment-aware
+
       res.cookie("accessToken", accessToken, {
         domain: "localhost",
         httpOnly: true,
@@ -186,9 +186,9 @@ export class AuthController {
 
       res.cookie("refreshToken", refreshToken, {
         domain: "localhost",
-        httpOnly: true, // important
+        httpOnly: true, 
         sameSite: "strict",
-        maxAge: 1000 * 60 * 60 * 24 * 7, // set ttl to 7 days
+        maxAge: 1000 * 60 * 60 * 24 * 7, 
       });
 
       this.logger.info("user logged succussfully", { id: user.id });
@@ -198,7 +198,7 @@ export class AuthController {
       return;
     }
   }
-
+ 
   async logout(req, res, next) {
     try {
       const tokenId = Number(req.auth.id);
