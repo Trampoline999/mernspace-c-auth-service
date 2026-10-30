@@ -29,3 +29,5 @@ logs/
 
 #remove coverage
 coverage/
+
+docker-compose.yml
