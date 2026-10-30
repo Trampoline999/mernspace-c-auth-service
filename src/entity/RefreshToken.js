@@ -23,7 +23,7 @@ export const RefreshToken = new EntitySchema({
       default: () => "CURRENT_TIMESTAMP",
       onUpdate: () => "CURRENT_TIMESTAMP",
     },
-  },
+  }, 
   relations: {
     user: {
       type: "many-to-one",

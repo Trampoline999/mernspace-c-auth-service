@@ -22,7 +22,6 @@ const validateRefresh = expressjwt({
         },
       });
       return refreshToken === null;
-      // eslint-disable-next-line no-unused-vars
     } catch (err) {
       logger.error("error while getting the refresh Token:", token.payload.id);
     }

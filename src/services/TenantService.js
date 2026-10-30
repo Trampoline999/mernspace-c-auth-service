@@ -24,7 +24,7 @@ export class TenantService {
 
   async getTenantById(id) {
     try {
-      return await this.tenantRepository.findOne({ id: id });
+      return await this.tenantRepository.findOne({ where: { id } });
     } catch {
       const err = createHttpError(500, "error finding tenants data");
       throw err;
@@ -50,14 +50,16 @@ export class TenantService {
   }
 
   async deleteTenantById(id) {
-    try {
-      const tenant = await this.tenantRepository.findOne({ where: { id } });
+   
+      const tenant = await this.tenantRepository.findOne({ where:  {id} });
       if (!tenant) {
         const err = createHttpError(404, `Tenant with id ${id} not found`);
         throw err;
       }
+       try {
       return await this.tenantRepository.delete(id);
-    } catch {
+    } catch(error) {
+      console.error("Delete error:", error.message); 
       const err = createHttpError(500, "error deleting tenant data");
       throw err;
     }

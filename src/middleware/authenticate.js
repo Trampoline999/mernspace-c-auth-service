@@ -8,7 +8,6 @@ export const authenticate = expressjwt({
     jwksUri: Config.JWKS_URI,
     cache: true,
     rateLimit: true,
-    
   }),
   algorithms: ["RS256"],
   getToken(req) {

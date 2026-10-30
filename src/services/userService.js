@@ -1,5 +1,6 @@
 import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
+import { In } from "typeorm";
 export class UserService {
   
   constructor(userRepository) {
@@ -24,7 +25,7 @@ export class UserService {
         email,
         password: hashedPassword,
         role,
-        tenantId: tenantId !== undefined ? tenantId :undefined
+        tenantId: tenantId !== "undefined" ? tenantId :"undefined"
       });
       
     } catch (err) {
@@ -64,18 +65,24 @@ export class UserService {
   }
 
   async getAllUsers() {
-    return await this.userRepository.find({});
+    return await this.userRepository.find({
+      where: {
+        role: In(["customer", "manager"]),
+      },
+    });
   }
 
-  async updateUser(id, { firstName, lastName, email, role, tenantId }) {
+  async updateUser(id,{ firstName, lastName, email, role, tenantId }) {
     try {
-      return await this.userRepository.update(id, {
+       await this.userRepository.update(id, {
         firstName,
         lastName,
         email,
         role,
-        tenant: id ? { id: tenantId } : null,
+        tenantId: tenantId !== "undefined" ? tenantId :null,
       });
+
+      return await this.userRepository.findOne({ where: { id } });
     } catch {
       const err = createHttpError(
         500,
