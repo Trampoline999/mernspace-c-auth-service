@@ -1,0 +1,359 @@
+# Instincts generated from https://github.com/Trampoline999/mernspace-c-auth-service
+# Generated: 2026-04-17T05:58:33.967Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: mernspace-c-auth-service-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix
+
+## Evidence
+
+- 1 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(server): ensure idempotent default admin creation on server start
+
+---
+id: mernspace-c-auth-service-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Commit Length
+
+## Action
+
+Write moderate-length commit messages (~69 characters)
+
+## Evidence
+
+- Average commit message length: 69 chars
+- Based on 1 commits
+
+---
+id: mernspace-c-auth-service-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: mernspace-c-auth-service-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: mernspace-c-auth-service-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: mernspace-c-auth-service-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: config, controllers, routes, services
+
+---
+id: mernspace-c-auth-service-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: mernspace-c-auth-service-instinct-file-naming
+trigger: "When creating a new file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct File Naming
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: mernspace-c-auth-service-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: mernspace-c-auth-service-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: mernspace-c-auth-service-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: mernspace-c-auth-service-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: mernspace-c-auth-service-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Export Style
+
+## Action
+
+Use either named or default exports as appropriate (mixed)
+
+## Evidence
+
+- Pattern in exportStyle: mixed
+
+---
+id: mernspace-c-auth-service-instinct-commit-format
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Commit Format
+
+## Action
+
+Use the conventional commit format with a 'fix' prefix for bug fixes
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Pattern in commits.prefixes: fix
+- Seen in commit: fix(server): ensure idempotent default admin creation on server start
+
+---
+id: mernspace-c-auth-service-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Commit Length
+
+## Action
+
+Aim for a commit message length around 69 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 69
+
+---
+id: mernspace-c-auth-service-instinct-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern in errorHandling.style: try-catch
+
+---
+id: mernspace-c-auth-service-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Test Location
+
+## Action
+
+Place test files in a separate location from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
+---
+id: mernspace-c-auth-service-instinct-src-layout
+trigger: "When adding new modules or features"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: Trampoline999/mernspace-c-auth-service
+---
+
+# Mernspace C Auth Service Instinct Src Layout
+
+## Action
+
+Organize code into type-based folders: config, controllers, routes, services under src
+
+## Evidence
+
+- Pattern in architecture.folderStructure.srcLayout: [config, controllers, routes, services]
+- Pattern in architecture.moduleOrganization: type-based
+
