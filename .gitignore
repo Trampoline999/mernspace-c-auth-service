@@ -32,3 +32,8 @@ logs/
 coverage/
 
 docker-compose.yml
+
+/.agents
+/.cursor
+/.gemini
+/.codex
