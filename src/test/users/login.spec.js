@@ -88,4 +88,26 @@ describe("/auth/login", () => {
     );
     expect(comparePassword).toBe(true);
   });
+
+  it("should return 400 if email does not exist in database", async () => {
+    const response = await loginUser({
+      email: "nonexistent@gmail.com",
+      password: "secret@123",
+    });
+    expect(response.statusCode).toBe(400);
+  });
+
+  it("should return 400 if password does not match", async () => {
+    await registerUser(registerData);
+    const response = await loginUser({
+      email: userData.email,
+      password: "wrongpassword",
+    });
+    expect(response.statusCode).toBe(400);
+  });
+
+  it("should return 400 if email or password is missing", async () => {
+    const response = await loginUser({ email: "" });
+    expect(response.statusCode).toBe(400);
+  });
 });

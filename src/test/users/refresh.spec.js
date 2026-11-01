@@ -106,4 +106,60 @@ describe("/auth/refresh", () => {
     let response = await refreshToken();
     expect(response.statusCode).toBe(401);
   });
+
+  it("should return 401 if refresh token is not found in database (revoked)", async () => {
+    const payload = {
+      sub: "9999",
+      role: Roles.CUSTOMER,
+      id: "9999",
+    };
+
+    const token = jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
+      algorithm: "HS256",
+      expiresIn: "7d",
+      issuer: "auth-service",
+      jwtid: "9999",
+    });
+
+    const response = await refreshToken(token);
+    expect(response.statusCode).toBe(401);
+  });
+
+  it("should logout user, delete refresh token, and clear cookies", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    const newRefreshtoken = await refreshTokenRepository.save({
+      user: user,
+      updatedAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
+    });
+
+    const payload = {
+      sub: String(user.id),
+      role: user.role,
+      id: String(newRefreshtoken.id),
+    };
+
+    const token = jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
+      algorithm: "HS256",
+      expiresIn: "7d",
+      issuer: "auth-service",
+      jwtid: String(newRefreshtoken.id),
+    });
+
+    const response = await request(app)
+      .get("/auth/logout")
+      .set("Cookie", [`refreshToken=${token}`])
+      .send();
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.message).toBe("user logout successfully");
+
+    const tokensInDb = await refreshTokenRepository.find({
+      where: { id: newRefreshtoken.id },
+    });
+    expect(tokensInDb).toHaveLength(0);
+  });
 });
