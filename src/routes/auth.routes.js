@@ -12,6 +12,7 @@ import { CredentialService } from "../services/myCredentialService.js";
 import { authenticate } from "../middleware/authenticate.js";
 import validateRefresh from "../middleware/validateRefresh.js";
 import parsedToken from "../middleware/parseToken.js";
+import { TokenService } from "../services/TokenServices.js";
 
 const authRouter = express.Router();
 const userRepository = AppDataSource.getRepository(User);
