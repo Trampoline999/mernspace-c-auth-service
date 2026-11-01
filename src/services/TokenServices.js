@@ -6,24 +6,22 @@ export class TokenService {
   constructor(refreshTokenRepository) {
     this.refreshTokenRepository = refreshTokenRepository;
   }
-   generateAccessToken(payload) {
+  generateAccessToken(payload) {
     let privatekey;
 
-    if(!Config.PRIVATE_KEY)
-    {
+    if (!Config.PRIVATE_KEY) {
       const error = createHttpError(500, "private key is not set!!!");
       throw error;
     }
-    
-    try {
-        privatekey = Config.PRIVATE_KEY ;
 
+    try {
+      privatekey = Config.PRIVATE_KEY.replace(/\\n/g, "\n");
     } catch {
       const error = createHttpError(500, "error while reading private key");
       throw error;
     }
 
-    const accessToken =  jwt.sign(payload, privatekey, {
+    const accessToken = jwt.sign(payload, privatekey, {
       algorithm: "RS256",
       expiresIn: "1hr",
       issuer: "auth-service",
@@ -32,8 +30,8 @@ export class TokenService {
     return accessToken;
   }
 
-   generateRefreshToken(payload) {
-    const refreshToken =  jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
+  generateRefreshToken(payload) {
+    const refreshToken = jwt.sign(payload, Config.REFRESH_TOKEN_SECRET, {
       algorithm: "HS256",
       expiresIn: "7d",
       issuer: "auth-service",

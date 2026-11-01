@@ -12,8 +12,9 @@ export const AppDataSource = new DataSource({
   username: Config.DB_USERNAME,
   password: Config.DB_PASSWORD,
   database: Config.DB_NAME,
+  ssl: Config.DB_HOST !== "localhost" && { rejectUnauthorized: false },
   // don't use this in production...
-  synchronize:Config.NODE_ENV == "test" || Config.NODE_ENV == "dev",
+  synchronize: Config.NODE_ENV == "test" || Config.NODE_ENV == "dev",
   logging: false,
   entities: [User, RefreshToken, Tenant],
   migrations: Config.NODE_ENV === "test" ? [] : ["src/migration/*.js"],

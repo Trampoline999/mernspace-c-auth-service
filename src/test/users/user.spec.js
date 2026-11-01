@@ -38,7 +38,7 @@ describe("/auth/self", () => {
     try {
       jwksMock = createJWKSMock("http://localhost:3000");
       connection = await AppDataSource.initialize();
-      
+
     } catch (error) {
       console.error("Error during Data Source initialization:", error);
       throw error; // Fail the test immediately if DB doesn't start
@@ -96,10 +96,10 @@ describe("/auth/self", () => {
         role: user.role,
       },
       { issuer: "auth-service" },
-    );  
-      console.log(accessToken);
+    );
+    console.log(accessToken);
     const response = await selfRoute(accessToken);
-   // console.log(response.body);
+
     expect(Number(response.body.id)).toBe(user.id);
   });
 
@@ -129,5 +129,18 @@ describe("/auth/self", () => {
 
     let response = await selfRoute();
     expect(response.statusCode).toBe(401);
+  });
+
+  it("should return 404 if user does not exist", async () => {
+    let accessToken = await jwksMock.token(
+      {
+        sub: "9999",
+        role: Roles.CUSTOMER,
+      },
+      { issuer: "auth-service" },
+    );
+
+    const response = await selfRoute(accessToken);
+    expect(response.statusCode).toBe(404);
   });
 });

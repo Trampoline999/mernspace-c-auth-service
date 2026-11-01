@@ -151,7 +151,7 @@ export class AuthController {
   async refresh(req, res, next) {
     try {
       const payload = {
-        sub: req.auth.id,
+        sub: req.auth.sub,
         role: req.auth.role || "customer",
       };
 
@@ -186,9 +186,9 @@ export class AuthController {
 
       res.cookie("refreshToken", refreshToken, {
         domain: "localhost",
-        httpOnly: true, 
+        httpOnly: true,
         sameSite: "strict",
-        maxAge: 1000 * 60 * 60 * 24 * 7, 
+        maxAge: 1000 * 60 * 60 * 24 * 7,
       });
 
       this.logger.info("user logged succussfully", { id: user.id });
@@ -198,7 +198,7 @@ export class AuthController {
       return;
     }
   }
- 
+
   async logout(req, res, next) {
     try {
       const tokenId = Number(req.auth.id);

@@ -89,4 +89,103 @@ describe("/users", () => {
     const users = await userRepository.find({});
     expect(users).toHaveLength(1);
   });
+
+  it("should get all users", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.MANAGER,
+    });
+
+    let adminToken = await jwksMock.token(
+      {
+        sub: String(user.id),
+        role: Roles.ADMIN,
+      },
+      { issuer: "auth-service" },
+    );
+
+    const response = await request(app)
+      .get("/users")
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(201);
+    expect(response.body.users).toHaveLength(1);
+  });
+
+  it("should get user by id", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    let userToken = await jwksMock.token(
+      {
+        sub: String(user.id),
+        role: Roles.CUSTOMER,
+      },
+      { issuer: "auth-service" },
+    );
+
+    const response = await request(app)
+      .get(`/users/${user.id}`)
+      .set("Cookie", [`accessToken=${userToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(201);
+    expect(response.body.id).toBe(user.id);
+  });
+
+  it("should update user", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    let adminToken = await jwksMock.token(
+      {
+        sub: String(user.id),
+        role: Roles.ADMIN,
+      },
+      { issuer: "auth-service" },
+    );
+
+    const response = await request(app)
+      .patch(`/users/${user.id}`)
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send({
+        firstName: "Updated",
+        lastName: "Name",
+        email: "updated@gmail.com",
+        role: Roles.CUSTOMER,
+      });
+
+    expect(response.statusCode).toBe(200);
+    const updatedUser = await userRepository.findOne({ where: { id: user.id } });
+    expect(updatedUser.firstName).toBe("Updated");
+  });
+
+  it("should delete user", async () => {
+    let user = await userRepository.save({
+      ...registerData,
+      role: Roles.CUSTOMER,
+    });
+
+    let adminToken = await jwksMock.token(
+      {
+        sub: String(user.id),
+        role: Roles.ADMIN,
+      },
+      { issuer: "auth-service" },
+    );
+
+    const response = await request(app)
+      .delete(`/users/${user.id}`)
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(201);
+    const deletedUser = await userRepository.findOne({ where: { id: user.id } });
+    expect(deletedUser).toBeNull();
+  });
 });

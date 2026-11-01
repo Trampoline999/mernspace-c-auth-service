@@ -105,4 +105,88 @@ describe("POST /tenants", () => {
 
     expect(tenants).toHaveLength(0);
   });
+
+  it("should get all tenants", async () => {
+    await tenantRepository.save({ name: "Tenant 1", address: "Address 1" });
+
+    const response = await request(app).get("/tenants").send();
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.tenants).toHaveLength(1);
+  });
+
+  it("should get tenant by id", async () => {
+    const tenant = await tenantRepository.save({ name: "Tenant 1", address: "Address 1" });
+
+    const response = await request(app)
+      .get(`/tenants/${tenant.id}`)
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.tenant.id).toBe(tenant.id);
+  });
+
+  it("should update tenant by id", async () => {
+    const tenant = await tenantRepository.save({ name: "Tenant 1", address: "Address 1" });
+
+    const response = await request(app)
+      .post(`/tenants/${tenant.id}`)
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send({
+        name: "Updated Tenant",
+        address: "Updated Address",
+      });
+
+    expect(response.statusCode).toBe(200);
+    const updated = await tenantRepository.findOne({ where: { id: tenant.id } });
+    expect(updated.name).toBe("Updated Tenant");
+  });
+
+  it("should delete tenant by id", async () => {
+    const tenant = await tenantRepository.save({ name: "Tenant 1", address: "Address 1" });
+
+    const response = await request(app)
+      .delete(`/tenants/${tenant.id}`)
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(200);
+    const deleted = await tenantRepository.findOne({ where: { id: tenant.id } });
+    expect(deleted).toBeNull();
+  });
+
+  it("should return 404 if tenant to get is not found", async () => {
+    const response = await request(app)
+      .get("/tenants/9999")
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(404);
+  });
+
+  it("should return 400 if tenant name is missing on create", async () => {
+    const response = await createTenant({ address: "Address only" }, adminToken);
+    expect(response.statusCode).toBe(400);
+  });
+
+  it("should return 400 if tenant address is missing on update", async () => {
+    const tenant = await tenantRepository.save({ name: "Tenant 1", address: "Address 1" });
+
+    const response = await request(app)
+      .post(`/tenants/${tenant.id}`)
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send({ name: "New Name" });
+
+    expect(response.statusCode).toBe(400);
+  });
+
+  it("should return 404 if tenant to delete is not found", async () => {
+    const response = await request(app)
+      .delete("/tenants/9999")
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(404);
+  });
 });

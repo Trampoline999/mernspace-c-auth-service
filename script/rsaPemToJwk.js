@@ -1,5 +1,5 @@
 import rsaPemToJwk from "rsa-pem-to-jwk";
-import fs from "fs";
+import fs from "node:fs";
 
 //# note : this file is used to convert rsa private key to jwks
 // command : node script/rsaPemToJwk.js

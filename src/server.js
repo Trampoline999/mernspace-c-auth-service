@@ -1,5 +1,5 @@
 import { Config } from "./config/config.js";
-import process from "process";
+import process from "node:process";
 import logger from "./config/logger.js";
 import app from "./app.js";
 import { AppDataSource } from "./config/data-source.js";
@@ -8,13 +8,13 @@ import { Roles } from "./constants/index.js";
 import bcrypt from "bcryptjs";
 
 
-const StartServer = async (req,res) => {
+const StartServer = async (req, res) => {
   try {
     await AppDataSource.initialize();
     logger.info("Database connected successfully...");
 
     // Ensure default admin user exists (idempotent & multi-instance safe)
-    await DefaultAdmin(req,res);
+    await DefaultAdmin(req, res);
 
     const port = Config.PORT || 1337;
     app.listen(port, () => {
@@ -26,7 +26,7 @@ const StartServer = async (req,res) => {
   }
 };
 
-const DefaultAdmin = async (req,res) => {
+const DefaultAdmin = async (req, res) => {
   try {
     const userRepository = await AppDataSource.getRepository(User);
 
@@ -53,14 +53,14 @@ const DefaultAdmin = async (req,res) => {
       tenant: undefined,
     }
 
-   
-    
+
+
     // Hash the password securely (10 salt rounds)
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(newAdminUser.password, saltRounds);
 
     // Create admin user
-    const adminUser = await userRepository.save({...newAdminUser, password: hashedPassword});
+    const adminUser = await userRepository.save({ ...newAdminUser, password: hashedPassword });
 
     logger.info("Admin user created successfully", {
       userId: adminUser.id,
@@ -91,7 +91,7 @@ const DefaultAdmin = async (req,res) => {
         maxAge: 1000 * 60 * 60 * 24 * 7, // set ttl to 7 days
       });
  */
-      logger.info("Admin user logged in successfully", {userId: adminUser.id});
+    logger.info("Admin user logged in successfully", { userId: adminUser.id });
 
   } catch (error) {
     // If error is duplicate key (admin created by another instance), that's OK
