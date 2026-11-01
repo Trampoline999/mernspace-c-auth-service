@@ -15,8 +15,7 @@ export class TokenService {
     }
 
     try {
-      privatekey = Config.PRIVATE_KEY;
-
+      privatekey = Config.PRIVATE_KEY.replace(/\\n/g, "\n");
     } catch {
       const error = createHttpError(500, "error while reading private key");
       throw error;
