@@ -2,11 +2,11 @@ import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
 import { In } from "typeorm";
 export class UserService {
-  
+
   constructor(userRepository) {
     this.userRepository = userRepository;
   }
-  async create({ firstName, lastName, email, password, role ,tenantId}) {
+  async create({ firstName, lastName, email, password, role, tenantId }) {
     try {
       const user = await this.userRepository.findOne({
         where: { email: email },
@@ -25,9 +25,9 @@ export class UserService {
         email,
         password: hashedPassword,
         role,
-        tenantId: tenantId !== "undefined" ? tenantId :"undefined"
+        tenantId: tenantId !== "undefined" ? tenantId : "undefined"
       });
-      
+
     } catch (err) {
       if (err.status === 400) {
         throw err;
@@ -42,7 +42,7 @@ export class UserService {
 
   async findByEmail({ email }) {
     return await this.userRepository.findOne({
-      where:{
+      where: {
         email
       }
     })
@@ -61,6 +61,9 @@ export class UserService {
       where: {
         id,
       },
+      relations: {
+        tenant: true,
+      },
     });
   }
 
@@ -72,14 +75,14 @@ export class UserService {
     });
   }
 
-  async updateUser(id,{ firstName, lastName, email, role, tenantId }) {
+  async updateUser(id, { firstName, lastName, email, role, tenantId }) {
     try {
-       await this.userRepository.update(id, {
+      await this.userRepository.update(id, {
         firstName,
         lastName,
         email,
         role,
-        tenantId: tenantId !== "undefined" ? tenantId :null,
+        tenantId: tenantId !== "undefined" ? tenantId : null,
       });
 
       return await this.userRepository.findOne({ where: { id } });
@@ -103,5 +106,5 @@ export class UserService {
       );
       throw err;
     }
-  } 
+  }
 }
