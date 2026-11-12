@@ -1,5 +1,5 @@
 import createHttpError from "http-errors";
-import { validationResult } from "express-validator";
+import { matchedData, validationResult } from "express-validator";
 
 export class UserController {
 
@@ -9,7 +9,7 @@ export class UserController {
   }
   async create(req, res, next) {
     try {
-      const { firstName, lastName, email, password,tenantId,role } = req.body;
+      const { firstName, lastName, email, password, tenantId, role } = req.body;
       const user = await this.userService.create({
         firstName,
         lastName,
@@ -27,12 +27,20 @@ export class UserController {
 
   async getAllUsers(req, res, next) {
     try {
-      const users = await this.userService.getAllUsers();
+
+      const validateQuery = matchedData(req, { onlyValidData: true })
+      console.log('validateQuery :', validateQuery)
+      const [users, count] = await this.userService.getAllUsers(validateQuery);
       if (!users) {
         const err = createHttpError(404, "no user found in database");
         next(err);
       }
-      res.status(201).json({ users });
+      res.status(201).json({
+        currentPage: validateQuery.currentPage,
+        perPage: validateQuery.perPage,
+        total: count,
+        data: users,
+      });
     } catch (err) {
       next(err);
       return;

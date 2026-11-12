@@ -7,17 +7,18 @@ import { canAccess } from "../middleware/canAccess.js";
 import { Roles } from "../constants/index.js";
 import { UserService } from "../services/userService.js"
 import logger from "../config/logger.js";
+import listUsersValidators from "../validators/list-users-validators.js";
 
 const userRouter = express.Router();
 
 const userRepository = AppDataSource.getRepository(User);
-const userService = new UserService (userRepository);
-const userController = new UserController(userService,logger);
+const userService = new UserService(userRepository);
+const userController = new UserController(userService, logger);
 
 userRouter.post("/", authenticate, canAccess([Roles.ADMIN]), (req, res, next) =>
   userController.create(req, res, next),
 );
-userRouter.get("/", authenticate, canAccess([Roles.ADMIN]), (req, res, next) =>
+userRouter.get("/", authenticate, canAccess([Roles.ADMIN]), listUsersValidators, (req, res, next) =>
   userController.getAllUsers(req, res, next),
 );
 userRouter.get("/:id", authenticate, (req, res, next) =>
