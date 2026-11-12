@@ -110,7 +110,41 @@ describe("/users", () => {
       .send();
 
     expect(response.statusCode).toBe(201);
-    expect(response.body.users).toHaveLength(1);
+    expect(response.body.data).toHaveLength(1);
+    expect(response.body.total).toBe(1);
+    expect(response.body.currentPage).toBe(1);
+    expect(response.body.perPage).toBe(10);
+  });
+
+  it("should paginate users based on currentPage and perPage query params", async () => {
+    const firstUser = await userRepository.save({
+      ...registerData,
+      role: Roles.MANAGER,
+    });
+    await userRepository.save({
+      ...registerData,
+      email: "second@gmail.com",
+      role: Roles.CUSTOMER,
+    });
+
+    const adminToken = await jwksMock.token(
+      {
+        sub: String(firstUser.id),
+        role: Roles.ADMIN,
+      },
+      { issuer: "auth-service" },
+    );
+
+    const response = await request(app)
+      .get("/users?currentPage=2&perPage=1")
+      .set("Cookie", [`accessToken=${adminToken}`])
+      .send();
+
+    expect(response.statusCode).toBe(201);
+    expect(response.body.currentPage).toBe(2);
+    expect(response.body.perPage).toBe(1);
+    expect(response.body.total).toBe(2);
+    expect(response.body.data).toHaveLength(1);
   });
 
   it("should get user by id", async () => {

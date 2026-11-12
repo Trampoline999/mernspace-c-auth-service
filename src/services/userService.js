@@ -67,12 +67,16 @@ export class UserService {
     });
   }
 
-  async getAllUsers() {
-    return await this.userRepository.find({
-      where: {
-        role: In(["customer", "manager"]),
-      },
-    });
+  async getAllUsers({ currentPage, perPage }) {
+
+    const queryBuilder = await this.userRepository.createQueryBuilder();
+
+    const result = await queryBuilder
+      .skip((currentPage - 1) * perPage)
+      .take(perPage)
+      .getManyAndCount()
+
+    return result;
   }
 
   async updateUser(id, { firstName, lastName, email, role, tenantId }) {
