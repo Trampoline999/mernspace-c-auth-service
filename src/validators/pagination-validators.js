@@ -6,7 +6,7 @@ export default checkSchema({
       options: (value) => {
 
         const parsedValue = Number(value)
-        return Number.isNaN(parsedValue) ? 1 : parsedValue
+        return Number.isNaN(parsedValue) || parsedValue <= 0 ? 1 : parsedValue
       }
     }
   },
@@ -14,7 +14,7 @@ export default checkSchema({
     customSanitizer: {
       options: (value) => {
         const parsedValue = Number(value)
-        return Number.isNaN(parsedValue) ? 10 : parsedValue
+        return Number.isNaN(parsedValue) || parsedValue <= 0 ? 10 : parsedValue
       }
     }
   }

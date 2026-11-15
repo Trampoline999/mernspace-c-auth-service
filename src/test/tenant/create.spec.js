@@ -112,7 +112,26 @@ describe("POST /tenants", () => {
     const response = await request(app).get("/tenants").send();
 
     expect(response.statusCode).toBe(200);
-    expect(response.body.tenants).toHaveLength(1);
+    expect(response.body.data).toHaveLength(1);
+    expect(response.body.total).toBe(1);
+    expect(response.body.currentPage).toBe(1);
+    expect(response.body.perPage).toBe(10);
+  });
+
+  it("should paginate tenants based on currentPage and perPage query params", async () => {
+    await tenantRepository.save({ name: "Tenant 1", address: "Address 1" });
+    await tenantRepository.save({ name: "Tenant 2", address: "Address 2" });
+
+    const response = await request(app)
+      .get("/tenants?currentPage=2&perPage=1")
+      .send();
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.currentPage).toBe(2);
+    expect(response.body.perPage).toBe(1);
+    expect(response.body.total).toBe(2);
+    expect(response.body.data).toHaveLength(1);
+    expect(response.body.data[0].name).toBe("Tenant 2");
   });
 
   it("should get tenant by id", async () => {
