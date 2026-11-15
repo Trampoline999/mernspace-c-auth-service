@@ -7,8 +7,8 @@ import logger from "../config/logger.js";
 import { authenticate } from "../middleware/authenticate.js";
 import { canAccess } from "../middleware/canAccess.js";
 import { Roles } from "../constants/index.js";
-
-import  tenantValidator  from "../validators/tenant-validator.js";
+import tenantValidator from "../validators/tenant-validator.js";
+import listTenantValidators from "../validators/pagination-validators.js";
 
 const tenantRouter = express.Router();
 const tenantRepository = AppDataSource.getRepository(Tenant);
@@ -23,10 +23,9 @@ tenantRouter.post(
   (req, res, next) => tenant.create(req, res, next),
 );
 
-tenantRouter.get("/", (req, res, next) =>
-  tenant.getAllTenants(req, res, next),
+tenantRouter.get("/", listTenantValidators, (req, res, next) => tenant.getAllTenants(req, res, next),
 );
-tenantRouter.get("/:id",authenticate,canAccess([Roles.ADMIN]), (req, res, next) =>
+tenantRouter.get("/:id", authenticate, canAccess([Roles.ADMIN]), (req, res, next) =>
   tenant.getTenant(req, res, next),
 );
 

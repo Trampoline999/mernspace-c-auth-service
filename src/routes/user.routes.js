@@ -7,7 +7,7 @@ import { canAccess } from "../middleware/canAccess.js";
 import { Roles } from "../constants/index.js";
 import { UserService } from "../services/userService.js"
 import logger from "../config/logger.js";
-import listUsersValidators from "../validators/list-users-validators.js";
+import listUsersValidators from "../validators/pagination-validators.js";
 
 const userRouter = express.Router();
 

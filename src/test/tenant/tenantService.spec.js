@@ -25,21 +25,35 @@ describe("TenantService Unit Tests", () => {
 
   it("should get all tenants", async () => {
     const tenantsList = [{ id: 1, name: "T1", address: "A1" }];
+    const count = 1;
+    const mockQueryBuilder = {
+      skip: jest.fn().mockReturnThis(),
+      take: jest.fn().mockReturnThis(),
+      getManyAndCount: jest.fn().mockResolvedValue([tenantsList, count]),
+    };
     const mockRepo = {
-      find: jest.fn().mockResolvedValue(tenantsList),
+      createQueryBuilder: jest.fn().mockReturnValue(mockQueryBuilder),
     };
     const service = new TenantService(mockRepo);
-    const result = await service.getAllTenants();
+    const result = await service.getAllTenants({ currentPage: 1, perPage: 10 });
 
-    expect(result).toEqual(tenantsList);
+    expect(result).toEqual([tenantsList, count]);
+    expect(mockRepo.createQueryBuilder).toHaveBeenCalled();
+    expect(mockQueryBuilder.skip).toHaveBeenCalledWith(0);
+    expect(mockQueryBuilder.take).toHaveBeenCalledWith(10);
+    expect(mockQueryBuilder.getManyAndCount).toHaveBeenCalled();
   });
 
   it("should throw 500 if getAllTenants fails", async () => {
     const mockRepo = {
-      find: jest.fn().mockRejectedValue(new Error("DB error")),
+      createQueryBuilder: jest.fn().mockImplementation(() => {
+        throw new Error("DB error");
+      }),
     };
     const service = new TenantService(mockRepo);
-    await expect(service.getAllTenants()).rejects.toThrow("error finding tenants data");
+    await expect(
+      service.getAllTenants({ currentPage: 1, perPage: 10 })
+    ).rejects.toThrow("error finding tenants data");
   });
 
   it("should get tenant by id", async () => {

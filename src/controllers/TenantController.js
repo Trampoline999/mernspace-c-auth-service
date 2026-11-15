@@ -1,5 +1,5 @@
 import createHttpError from "http-errors";
-import { validationResult } from "express-validator";
+import { matchedData, validationResult } from "express-validator";
 
 export class TenantController {
   tenantService;
@@ -28,8 +28,15 @@ export class TenantController {
 
   async getAllTenants(req, res, next) {
     try {
-      const tenants = await this.tenantService.getAllTenants();
-      res.status(200).json({ tenants });
+      const validateQuery = matchedData(req, { onlyValidData: true });
+      const [tenants, count] = await this.tenantService.getAllTenants(validateQuery);
+      res.status(200).json({
+        currentPage: validateQuery.currentPage,
+        perPage: validateQuery.perPage,
+        total: count,
+        data: tenants,
+        tenants,
+      });
     } catch (err) {
       next(err);
       return;

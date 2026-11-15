@@ -1,3 +1,4 @@
+import { matchedData } from "express-validator";
 import createHttpError from "http-errors";
 
 export class TenantService {
@@ -13,9 +14,17 @@ export class TenantService {
     }
   }
 
-  async getAllTenants() {
+  async getAllTenants(validatedQuery = {}) {
+    const { currentPage = 1, perPage = 10 } = validatedQuery;
     try {
-      return await this.tenantRepository.find({});
+      const queryBuilder = await this.tenantRepository.createQueryBuilder();
+
+      const result = await queryBuilder
+        .skip((currentPage - 1) * perPage)
+        .take(perPage)
+        .getManyAndCount();
+      return result;
+
     } catch {
       const err = createHttpError(500, "error finding tenants data");
       throw err;
@@ -50,16 +59,16 @@ export class TenantService {
   }
 
   async deleteTenantById(id) {
-   
-      const tenant = await this.tenantRepository.findOne({ where:  {id} });
-      if (!tenant) {
-        const err = createHttpError(404, `Tenant with id ${id} not found`);
-        throw err;
-      }
-       try {
+
+    const tenant = await this.tenantRepository.findOne({ where: { id } });
+    if (!tenant) {
+      const err = createHttpError(404, `Tenant with id ${id} not found`);
+      throw err;
+    }
+    try {
       return await this.tenantRepository.delete(id);
-    } catch(error) {
-      console.error("Delete error:", error.message); 
+    } catch (error) {
+      console.error("Delete error:", error.message);
       const err = createHttpError(500, "error deleting tenant data");
       throw err;
     }
