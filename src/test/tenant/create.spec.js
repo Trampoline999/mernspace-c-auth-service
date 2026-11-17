@@ -93,7 +93,7 @@ describe("POST /tenants", () => {
     expect(tenants).toHaveLength(0);
   });
 
-  it("should return 403 if user is not Manager", async () => {
+  it("should return 403 if user is not Admin", async () => {
     const managerToken = await jwksMock.token({
       sub: "1",
       role: Roles.MANAGER,

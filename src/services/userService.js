@@ -1,6 +1,7 @@
 import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
 import { In } from "typeorm";
+import { Brackets } from "typeorm";
 export class UserService {
 
   constructor(userRepository) {
@@ -67,11 +68,28 @@ export class UserService {
     });
   }
 
-  async getAllUsers({ currentPage, perPage }) {
+  async getAllUsers({ search, role, currentPage, perPage }) {
 
-    const queryBuilder = await this.userRepository.createQueryBuilder();
+    //# todo
+    const queryBuilder = await this.userRepository.createQueryBuilder('user');
 
+    if (search) {
+      const searchTerm = `%${search}%`
+
+      queryBuilder.andWhere(
+        new Brackets((qb) => {
+          qb.where("user.firstName ILIKE :search", { search: searchTerm })
+            .orWhere("user.lastName ILIKE :search", { search: searchTerm })
+            .orWhere("user.email ILIKE :search", { search: searchTerm });
+        })
+      );
+    }
+
+    if (role) {
+      queryBuilder.andWhere("user.role = :role", { role });
+    }
     const result = await queryBuilder
+      .orderBy("user.id", "DESC")
       .skip((currentPage - 1) * perPage)
       .take(perPage)
       .getManyAndCount()

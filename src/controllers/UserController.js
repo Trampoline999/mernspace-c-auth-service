@@ -3,6 +3,7 @@ import { matchedData, validationResult } from "express-validator";
 
 export class UserController {
 
+
   constructor(userService, logger) {
     this.userService = userService;
     this.logger = logger;

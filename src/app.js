@@ -8,6 +8,7 @@ import cors from 'cors'
 
 const app = express();
 app.use(cors({
+
   //# todo # warn move to .env file
   origin: ["http://localhost:5173", "http://127.0.0.1:5174"],
   credentials: true
